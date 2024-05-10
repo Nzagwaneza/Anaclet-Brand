@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="Articles.css" />
     <link rel="stylesheet" href="Articleview.css" />
     <link rel="stylesheet" href="Dashboard.css" />
+    <link rel="stylesheet" href="dashboard2.css" />
 
     <link
       rel="stylesheet"
@@ -24,7 +25,7 @@
     <title>Anaclet_Pers_Brand</title>
   </head>
 
-  <body class="my_page">
+  <body class="my_page"  id="home">
     <div class="hm-header">
       <div class="hm-header-menu">
         <img class="brand-name" src="Icons/logo.JPG" alt="Logo" />
@@ -47,15 +48,15 @@
         >
       </div>
     </div>
+    <div class="hm-menu">
+      <a href="#home">Home</a>
+      <a href="#about-me">About Me</a>
+      <a href="#skills">My skills</a>
+      <a href="#articles">Articles</a>
+      <a href="#dashboard">Dashboard</a>
+    </div>
     <div class="hm-main">
       <div class="hm-upperside">
-        <div class="hm-menu">
-          <a href="#home">Home</a>
-          <a href="#about-me">About Me</a>
-          <a href="#skills">My skills</a>
-          <a href="#articles">Articles</a>
-          <a href="#dashboard">Dashboard</a>
-        </div>
         <div class="hm-main-area">
           <p class="hm-intro">
             Hi there!
@@ -74,7 +75,7 @@
       </div>
     </div>
 
-    <div class="ab-main-center">
+    <div class="ab-main-center"  id="about-me">
       <span>Let’s get to know each other!</span>
     </div>
     <div class="ab-detail">
@@ -101,7 +102,7 @@
         </p>
       </div>
     </div>
-    <div class="skills-lowerside">
+    <div class="skills-section" id="skills">
       <strong>My skills are summarized here below:</strong>
       <div class="skills-container">
         <div class="skill-item">
@@ -152,7 +153,7 @@
         </div>
       </div>
     </div>
-    <div class="articles-container">
+    <div class="articles-container" id="articles">
       <div class="for-every-article">
         <span id="title">My journal in coding life</span>
         <div class="art-leftside">
@@ -349,6 +350,27 @@
           <br />
           Coding is more than a skill; it's a journey of continuous
           learning and growth. <br />
+          As a nurse, I witnessed firsthand the impact technology had on
+          patient care. It was during those moments, surrounded by beeping
+          machines and digital records, that I felt a spark of curiosity.
+          What if I could contribute to healthcare not only at the bedside
+          but also behind the scenes, shaping the very tools that enhance
+          the patient experience?
+
+          With this newfound curiosity, I embarked on a journey into the
+          realm of coding. The transition from stethoscopes to lines of
+          code was not without its challenges, but each challenge became a
+          stepping stone. I enrolled in the ATLP coding program, ready to
+          unravel the mysteries of programming languages and algorithms.
+          <br />
+          The initial days were like learning a new language, decoding the
+          syntax and understanding the logic that powered software. But
+          with every line of code written, I discovered the joy of
+          problem-solving and the immense satisfaction of seeing my
+          creations come to life on the screen. <br />
+          <br />
+          Coding is more than a skill; it's a journey of continuous
+          learning and growth. <br />
           <br />
           As a nurse, I witnessed firsthand the impact technology had on
           patient care. It was during those moments, surrounded by beeping
@@ -391,7 +413,7 @@
       </div>
     </div>
     <div id="dashboard">
-      <img class="profilepic" src="Icons/logo.JPG" alt="Profile Picture" />
+      <img class="brand-name" src="Icons/logo.JPG" alt="Profile Picture" />
       <h1 class="dashboard-title">DASHBOARD</h1>
     </div>
     <div class="dash-container">
@@ -407,27 +429,25 @@
           >
         </div>
         <div>
-          <a class="menu" id="users" href=""
+          <a class="menu" id="dash-all-users" href=""
             ><i class="fas fa-users"></i> <strong>Manage users</strong></a
           >
         </div>
         <div>
-          <a class="menu" id="skills" href=""
+          <a class="menu" id="dash-add-skills" href=""
             ><i class="fa-solid fa-book-open-reader"></i> <strong>Manage skills</strong></a
           >
         </div>
         <div>
-          <a class="menu" id="statistics" href=""
-            ><i class="fas fa-chart-bar"></i> <strong>Statistics</strong></a
-          >
+          <span class="menu" id="statistics" ><i class="fas fa-chart-bar"></i> <strong>Statistics</strong></span>
         </div>
         <div>
-          <a class="menu" id="message" href=""
+          <a class="menu" id="dash-all-messages" href=""
             ><i class="fas fa-envelope"></i> <strong>Messages</strong></a
           >
         </div>
       </div>
-      <div class="dash-container-right">
+      <div class="dash-container-modification-area">
         <div id="topInputs">
           <input type="text" id="textTitle" placeholder="Enter the title" />
           <input
@@ -457,5 +477,6 @@
         </div>
       </div>
     </div>
+    <script src="index.js"></script>
   </body>
 </html>

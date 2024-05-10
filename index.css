@@ -49,6 +49,9 @@
   justify-content: space-between;
   padding: 9px;
   font-weight: bold;
+  position: sticky;
+  top: 0%;
+  z-index: 1;
 }
 
 .hm-main-area {

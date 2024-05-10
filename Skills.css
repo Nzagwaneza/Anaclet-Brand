@@ -1,4 +1,4 @@
-.skills-lowerside {
+.skills-section {
   padding: 9px;
   background-image: url("Icons/back_for_My_skills.jpg");
   background-size: cover;
@@ -8,6 +8,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  padding-bottom: 4vw;
+  margin-bottom: 2vw;
 }
 
 .skills-container {
