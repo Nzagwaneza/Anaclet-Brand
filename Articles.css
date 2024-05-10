@@ -1,0 +1,79 @@
+.articles-container {
+  margin: 10px 10px 10px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  gap: 1vw;
+}
+
+.art-pic-for-auth {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+#art-main-pic {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#title {
+  padding: 9px;
+  padding-top: 8px;
+  font-weight: bolder;
+  text-align: justify;
+}
+
+.for-every-article {
+  width: 370px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: solid rgb(220, 208, 208);
+  background-color: #f5f5f5;
+  border-radius: 13px;
+  padding: 4px;
+  line-height: normal;
+  font-size: small;
+}
+
+.art-topic-related-pic {
+  width: 50%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.art-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.art-Right {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.art-leftside {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#art-viewingBtn {
+  width: 100px;
+  background-color: #6c9efe;
+  border-radius: 20px;
+}

@@ -1,0 +1,113 @@
+/* FIXME: these are codes for modifying messasges */
+
+.dash-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.dash-reply-btn,
+.dash-change-role-btn,
+.dash-moddy-btn,
+.dash-delete-message,
+.dash-delete-skills,
+.dash-add-skills-btn {
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+}
+
+.dash-add-skills-btn {
+  margin: 4%;
+}
+
+.dash-delete-message,
+.dash-delete-skills {
+  background-color: hsl(0, 70%, 59%);
+}
+
+.dash-for-every-message,
+.dash-for-every-user {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 6px;
+  padding: 6px;
+  border: #dfe6ee solid;
+  border-radius: 12px;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.user-to-change,
+.message-to-edit {
+  margin-bottom: 7px;
+  width: 80%;
+  text-align: justify;
+}
+.dash-container-modification-area {
+  width: 70%;
+  padding: 2px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dash-container-modify-skills {
+  width: 70%;
+  padding: 2px;
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dash-skill-item {
+  background-color: white;
+  padding: 9px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dash-skills-lowerside {
+  padding: 9px;
+  background-color: hsl(211, 100%, 77%);
+  display: flex;
+  gap: 15px;
+  border-radius: 9px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+div#dash-top-input {
+  display: flex;
+  flex-direction: column;
+  justify-items: flex-start;
+  padding: 9px;
+  border-radius: 10px;
+}
+
+.dash-add-skills {
+  display: flex;
+  justify-content: center;
+}
+
+/* FIXME: these are codes for modifying blogs */
+
+.title-blog-to-edit {
+  margin: 5px;
+}
+
+.dash-listing-title {
+  text-align: center;
+  font-weight: bolder;
+  text-transform: uppercase;
+}

@@ -1,0 +1,227 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.my_page {
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+}
+
+.hm-header {
+  padding: 12px;
+  background: #6c9efe;
+  font-weight: bold;
+}
+
+.hm-header-menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hm-header-menu-small {
+  display: none;
+}
+
+.hm-header-menu-large {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+}
+
+.profilepic {
+  width: 70px;
+  height: 65px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.hm-menu {
+  height: 68px;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px;
+  font-weight: bold;
+}
+
+.hm-main-area {
+  height: 37vw;
+  font-size: 16px;
+  background-image: url("Icons/background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 2;
+  color: white;
+}
+
+p.hm-intro {
+  width: 25vw;
+  position: relative;
+  left: 20vw;
+  top: 11vw;
+  font-size: 18px;
+}
+
+p.hm-welcome {
+  padding: 4vw 20vw;
+  text-align: center;
+  font-size: larger;
+  font-weight: bolder;
+}
+
+.hm-lower-side {
+  background-color: #d9d9d9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 2;
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 600px) {
+  .hm-header-menu-small {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .hm-header-menu-large {
+    display: none;
+  }
+
+  .brand-name {
+    grid-column: span 1;
+    grid-row: 1;
+    height: 50px;
+    width: 70px;
+  }
+
+  .hm-header-link1,
+  .hm-header-link2 {
+    grid-column: span 1;
+    grid-row: 2;
+    width: auto;
+    font-size: 12px;
+  }
+
+  .hm-header-link3 {
+    grid-row: 2;
+    width: auto;
+    font-size: 12px;
+  }
+
+  .hm-header-link1 {
+    justify-self: start;
+  }
+
+  .hm-header-link2 {
+    justify-self: center;
+  }
+
+  .hm-header-link3 {
+    justify-self: center;
+  }
+
+  .profilepic {
+    grid-column: 3 / span 2;
+    grid-row: 1;
+    height: 40px;
+    width: 40px;
+    justify-self: end;
+  }
+
+  .hm-main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hm-main-area {
+    width: 100vw;
+    height: 44vw;
+    font-size: 12px;
+  }
+
+  .hm-menu,
+  .hm-lower-side {
+    max-height: 150px;
+    font-size: 12px;
+  }
+
+  p.hm-intro {
+    width: 47vw;
+    height: 45vw;
+    position: relative;
+    left: 25vw;
+    top: 06vw;
+    font-size: 10px;
+  }
+
+  p.hm-welcome {
+    font-size: 12px;
+    padding: 2vw;
+  }
+}
+
+/* Tablets Styles */
+@media only screen and (min-width: 601px) and (max-width: 990px) {
+  .my_page {
+    display: flex;
+    flex-direction: column;
+  }
+  .hm-header {
+    font-size: 15px;
+  }
+
+  .hm-header-menu-large {
+    display: none;
+  }
+
+  .hm-header-menu-small {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+  }
+
+  p.hm-intro {
+    width: 35vw;
+    left: 20vw;
+    top: 09vw;
+    font-size: 13px;
+  }
+
+  p.hm-welcome {
+    font-size: 13px;
+    padding: 3vw 15vw;
+  }
+
+  .brand-name {
+    grid-column: span 1;
+    grid-row: 1;
+    height: 50px;
+    width: 80px;
+  }
+
+  .profilepic {
+    width: 70px;
+    height: 65px;
+  }
+}

@@ -1,0 +1,78 @@
+/* Dashboard.css */
+#dashboard {
+  background-color: #6c9efe;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.dashboard-title {
+  font-size: 34px;
+  text-align: center;
+}
+
+.dash-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.dash-container-left {
+  width: 40%;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dash-container-right {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#dash-submit-Btn,
+.dash-modify-art,
+.dash-add-art {
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+}
+
+#dash-real-article-text {
+  height: 47vh;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Styling for inputs and textareas */
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* Footer styling */
+footer {
+  height: auto;
+  text-align: center;
+  margin-top: auto;
+  padding: 18px;
+  background-color: #6c9efe;
+}
+
+/* Icon styling */
+i {
+  margin-right: 5px;
+}
