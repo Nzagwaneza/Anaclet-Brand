@@ -6,7 +6,7 @@
   align-items: center;
   align-content: flex-start;
   flex-wrap: wrap;
-  gap: 1vw;
+  gap: 2vw;
 }
 
 .art-pic-for-auth {
@@ -43,6 +43,11 @@
   font-size: small;
 }
 
+.for-every-article:hover {
+  transform: scale(1.06);
+  background-color: #c9c9f0;
+}
+
 .art-topic-related-pic {
   width: 50%;
   height: 100%;
@@ -54,7 +59,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
+  margin-left: 2vw;
 }
 
 .art-Right {
@@ -73,7 +78,19 @@
 }
 
 #art-viewingBtn {
-  width: 100px;
+  width: 70px;
   background-color: #6c9efe;
   border-radius: 20px;
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 600px) {
+  .for-every-article {
+    width: 100%;
+  }
+
+  .art-Right,
+  #art-viewingBtn {
+    font-size: smaller;
+  }
 }

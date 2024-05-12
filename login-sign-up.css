@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.my_page {
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: aliceblue;
+}
+
+.Header {
+  width: 100%;
+  background: #6c9efe;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.brandname {
+  font-size: 40px;
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 2vw;
+}
+
+#Password,
+#Username,
+#ConfirmPassword {
+  border-radius: 9px;
+  margin: 5px auto;
+}
+
+.Importantarea {
+  background: rgb(203, 221, 237);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: solid rgb(54, 83, 141);
+  border-radius: 11px;
+  margin-top: 3vw;
+  padding: 3vw 0px;
+  text-align: center;
+}
+
+.username,
+button,
+.hometext1,
+.hometext2 {
+  font-size: 15px;
+  padding: 0% 2vw;
+}
+.welcome {
+  font-size: 27px;
+  margin-bottom: 2vw;
+  font-weight: bolder;
+}
+
+.quote {
+  font-size: 20px;
+  font-style: italic;
+  font-weight: bolder;
+}
+
+.signin,
+.hometext1 {
+  text-decoration-line: none;
+  color: black;
+}
+
+input[type="text"],
+input[type="password"],
+button {
+  border: 1px solid rgb(173, 170, 170);
+  margin-top: 10px;
+  padding: 5px;
+  font-size: 12px;
+}
+
+input::placeholder {
+  text-align: center;
+  font-size: 15px;
+}
+
+#errorBlock {
+  color: red;
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+.signup,
+.login {
+  margin: 7% 0% 30% 0%;
+  border-radius: 8px;
+  width: 100px;
+  background-color: #224282;
+  color: #ffffff;
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 600px) {
+  .welcome {
+    font-size: 18px;
+    margin: 40px 0px 15px 0px;
+  }
+  .quote {
+    font-size: 15px;
+    font-style: italic;
+  }
+
+  input[type="text"],
+  input[type="password"],
+  button {
+    border: 1px solid rgb(173, 170, 170);
+    border-radius: 7px;
+    margin-top: 10px;
+    padding: 4px;
+    font-size: 12px;
+  }
+}
+
+/* Tablets Styles */
+@media only screen and (min-width: 601px) and (max-width: 990px) {
+  .welcome {
+    font-size: 24px;
+  }
+
+  .quote {
+    font-size: 17px;
+  }
+}
+
+/* Desktop and big screens Styles */
+@media only screen and (min-width: 991px) {
+  .welcome {
+    font-size: 27px;
+  }
+}

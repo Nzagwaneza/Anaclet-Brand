@@ -49,6 +49,11 @@
   margin-bottom: 7px;
   width: 80%;
   text-align: justify;
+  margin-right: 1vw;
+}
+
+.modification-option-for-message {
+  margin: 0 auto;
 }
 .dash-container-modification-area,
 .dash-container-modify-skills {
@@ -106,4 +111,29 @@ div#dash-top-input {
   font-weight: bolder;
   text-transform: uppercase;
   margin-bottom: 1vw;
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 600px) {
+  .dash-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    font-size: small;
+  }
+
+  .user-to-change,
+  .message-to-edit {
+    width: 100%;
+  }
+  .modification-option {
+    margin: 0 auto;
+  }
+}
+
+/* Tablets Styles and min-desktop */
+@media only screen and (min-width: 601px) and (max-width: 1170px) {
+  .message-to-edit {
+    width: 100%;
+  }
 }

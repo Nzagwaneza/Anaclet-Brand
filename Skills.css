@@ -35,3 +35,14 @@
 .My_icons {
   font-size: 30px;
 }
+
+.skill-item {
+  font-size: small;
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 600px) {
+  .skill-item {
+    font-size: small;
+  }
+}

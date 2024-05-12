@@ -4,11 +4,10 @@
   background-color: #6c9efe;
   display: flex;
   align-items: center;
-  padding: 10px;
 }
 
 .dashboard-title {
-  font-size: 34px;
+  font-size: 2.5vw;
   text-align: center;
 }
 

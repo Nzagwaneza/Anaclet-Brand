@@ -1,0 +1,73 @@
+/* Body Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation Styles */
+nav {
+  position: relative;
+  z-index: 1;
+  background-color: #333;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+nav ul li.active button {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+nav ul li.active button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Animation Styles */
+nav.before ul li.active button {
+  transform: rotateY(180deg);
+}
+
+nav:before {
+  content: "";
+  position: absolute;
+  inset: 40% -60% 0 -60%;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* Navigation Styles */
+nav ul li.active button {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0); /* initially no shadow */
+}
+
+nav ul li.active button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* add a glow on hover */
+}

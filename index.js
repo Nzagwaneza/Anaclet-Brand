@@ -5,9 +5,6 @@ let allSkills = document.body.querySelector("#dash-add-skills");
 let dashGeneralDisplayArea = document.body.querySelector(
   ".dash-container-modification-area"
 );
-// let dashDisplaySkills = document.body.querySelector(
-//   ".dash-container-modify-skills"
-// );
 
 function displayAllUsers() {
   allUsers.addEventListener("click", function (event) {
@@ -66,20 +63,35 @@ function displayAllBlogs() {
     </div>
     <div class="all-blogs-list">
         <div class="dash-for-every-message">
-            <div class="title-blog-to-edit">
-                <span>
-                    Mastering Figma designing
-                </span>
-            </div>
-            <div class="modification-option">
-                <button class="dash-moddy-btn" id="dash-edit-blog">
-                Edit
-                </button>
-                <button  class="dash-delete-message">
-                Delete
-                </button>
-            </div>
+          <div class="title-blog-to-edit">
+              <span>
+                  Mastering Figma designing
+              </span>
+          </div>
+          <div class="modification-option">
+              <button class="dash-moddy-btn" id="dash-edit-blog">
+              Edit
+              </button>
+              <button  class="dash-delete-message">
+              Delete
+              </button>
+          </div>
         </div>
+        <div class="dash-for-every-message">
+        <div class="title-blog-to-edit">
+            <span>
+                Coding is no longer that hard
+            </span>
+        </div>
+        <div class="modification-option">
+            <button class="dash-moddy-btn" id="dash-edit-blog">
+            Edit
+            </button>
+            <button  class="dash-delete-message">
+            Delete
+            </button>
+        </div>
+      </div>
     </div>
           `;
   });
@@ -108,7 +120,7 @@ function displayAllMessages() {
                   that your blogs and motivations are building my future. Big up!
               </message>
           </div>
-          <div class="modification-option">
+          <div class="modification-option-for-message">
               <button class="dash-reply-btn">
                 Reply
               </button>
@@ -130,7 +142,7 @@ function displayAllMessages() {
                 doing great coz you are really special creature
             </message>
         </div>
-        <div class="modification-option">
+        <div class="modification-option-for-message">
             <button class="dash-reply-btn">
               Reply
             </button>
@@ -152,7 +164,7 @@ function displayAllMessages() {
                 doing great coz you are really special creature
             </message>
         </div>
-        <div class="modification-option">
+        <div class="modification-option-for-message">
             <button class="dash-reply-btn">
               Reply
             </button>
@@ -174,7 +186,7 @@ function displayAllMessages() {
                 doing great coz you are really special creature
             </message>
         </div>
-        <div class="modification-option">
+        <div class="modification-option-for-message">
             <button class="dash-reply-btn">
               Reply
             </button>
@@ -196,7 +208,7 @@ function displayAllMessages() {
                 doing great coz you are really special creature
             </message>
         </div>
-        <div class="modification-option">
+        <div class="modification-option-for-message">
             <button class="dash-reply-btn">
               Reply
             </button>
@@ -218,7 +230,7 @@ function displayAllMessages() {
                 doing great coz you are really special creature
             </message>
         </div>
-        <div class="modification-option">
+        <div class="modification-option-for-message">
             <button class="dash-reply-btn">
               Reply
             </button>
@@ -305,3 +317,23 @@ function displayAllSkills() {
   });
 }
 displayAllSkills();
+
+document.addEventListener("DOMContentLoaded", function () {
+  const links = document.querySelectorAll(".menu-link");
+
+  links.forEach(function (link) {
+    link.addEventListener("click", function (event) {
+      const currentActive = document.querySelector(".active");
+      if (currentActive) {
+        currentActive.classList.remove("active");
+        currentActive.classList.remove("thunder-effect");
+      }
+      this.classList.add("active");
+      this.classList.add("thunder-effect");
+      setTimeout(function () {
+        window.location.href = link.getAttribute("href");
+      }, 30); // Adjust the delay to match the thunder effect duration
+      event.preventDefault(); // Prevents the default behavior after applying the classes
+    });
+  });
+});
