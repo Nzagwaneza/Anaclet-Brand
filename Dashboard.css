@@ -52,8 +52,8 @@ button:hover {
   background-color: #0056b3;
 }
 
-/* Styling for inputs and textareas */
 input[type="text"],
+input[type="email"],
 textarea {
   width: 100%;
   padding: 10px;
@@ -61,18 +61,4 @@ textarea {
   border: 1px solid #ccc;
   border-radius: 5px;
   box-sizing: border-box;
-}
-
-/* Footer styling */
-footer {
-  height: auto;
-  text-align: center;
-  margin-top: auto;
-  padding: 18px;
-  background-color: #6c9efe;
-}
-
-/* Icon styling */
-i {
-  margin-right: 5px;
 }

@@ -1,3 +1,5 @@
+let addBlogs = document.body.querySelector(".dash-add-art");
+let modifyBlogs = document.body.querySelector(".dash-modify-art");
 let allUsers = document.body.querySelector("#dash-all-users");
 let allBlogs = document.body.querySelector("#dash-all-blogs");
 let allMessages = document.body.querySelector("#dash-all-messages");
@@ -53,11 +55,8 @@ function displayAllUsers() {
 }
 displayAllUsers();
 
-function displayAllBlogs() {
-  allBlogs.addEventListener("click", function (event) {
-    event.preventDefault(); // Prevent default behavior
-
-    dashGeneralDisplayArea.innerHTML = `
+function displayAllBlogs(event) {
+  dashGeneralDisplayArea.innerHTML = `
     <div class="dash-listing-title">
         List of all Blogs
     </div>
@@ -94,9 +93,18 @@ function displayAllBlogs() {
       </div>
     </div>
           `;
-  });
 }
 displayAllBlogs();
+allBlogs.addEventListener("click", function (event) {
+  event.preventDefault();
+  displayAllBlogs(event);
+});
+
+displayAllBlogs();
+modifyBlogs.addEventListener("click", function (event) {
+  event.preventDefault();
+  displayAllBlogs(event);
+});
 
 function displayAllMessages() {
   allMessages.addEventListener("click", function (event) {
@@ -107,137 +115,160 @@ function displayAllMessages() {
     <div class="dash-listing-title">List of all Messages</div>
     <div>
       <div class="dash-for-every-message">
-          <div class="message-to-edit">
-              <p>
-                <strong>Sender: </strong><sender>ndizihiwe.Eric@gmail.com</sender>
-              </p>
-              <message>
-                <span>
-                  <strong> Message: </strong>
-                </span>
-                  Hey dude you are so funny and all yours are fantastic all over the world . keep
-                  doing great coz you are really special creature. i repeat again you are so special
-                  that your blogs and motivations are building my future. Big up!
-              </message>
+        <div class="message-to-edit">
+            <p id="sender-names">
+              <strong>Names: </strong><sender>Ndizihiwe</sender>
+            </p>
+            <p id="sender-email">
+              <strong>Email: </strong><sender>ndizihiwe.Eric@gmail.com</sender>
+            </p>
+            <message>
+              <span>
+                <strong> Message: </strong>
+              </span>
+                Hey dude you are so funny and all yours are fantastic all over the world . keep
+                doing great coz you are really special creature. i repeat again you are so special
+                that your blogs and motivations are building my future. Big up!
+            </message>
           </div>
           <div class="modification-option-for-message">
-              <button class="dash-reply-btn">
+            <button class="dash-reply-btn">
                 Reply
-              </button>
-              <button  class="dash-delete-message">
+            </button>
+            <button  class="dash-delete-message">
               Delete
-              </button>
+            </button>
+          </div>
+      </div>
+      <div class="dash-for-every-message">
+      <div class="message-to-edit">
+        <p id="sender-names">
+          <strong>Names: </strong><sender>Ndizihiwe</sender>
+        </p>
+        <p id="sender-email">
+          <strong>Email: </strong><sender>ndizihiwe.Eric@gmail.com</sender>
+        </p>
+        <message>
+          <span>
+            <strong> Message: </strong>
+          </span>
+            Hey dude you are so funny and all yours are fantastic all over the world . keep
+            doing great coz you are really special creature. i repeat again you are so special
+            that your blogs and motivations are building my future. Big up!
+        </message>
+        </div>
+        <div class="modification-option-for-message">
+          <button class="dash-reply-btn">
+              Reply
+          </button>
+          <button  class="dash-delete-message">
+            Delete
+          </button>
+        </div>
+      </div>
+      <div class="dash-for-every-message">
+        <div class="message-to-edit">
+            <p id="sender-names">
+              <strong>Names: </strong><sender>Ndizihiwe</sender>
+            </p>
+            <p id="sender-email">
+              <strong>Email: </strong><sender>ndizihiwe.Eric@gmail.com</sender>
+            </p>
+            <message>
+              <span>
+                <strong> Message: </strong>
+              </span>
+                Hey dude you are so funny and all yours are fantastic all over the world . keep
+                doing great coz you are really special creature. i repeat again you are so special
+                that your blogs and motivations are building my future. Big up!
+            </message>
+          </div>
+          <div class="modification-option-for-message">
+            <button class="dash-reply-btn">
+                Reply
+            </button>
+            <button  class="dash-delete-message">
+              Delete
+            </button>
           </div>
       </div>
       <div class="dash-for-every-message">
         <div class="message-to-edit">
-            <p>
-              <strong>Sender: </strong><sender>anzagwaneza@gmail.com</sender>
+            <p id="sender-names">
+              <strong>Names: </strong><sender>Ndizihiwe</sender>
+            </p>
+            <p id="sender-email">
+              <strong>Email: </strong><sender>ndizihiwe.Eric@gmail.com</sender>
             </p>
             <message>
               <span>
                 <strong> Message: </strong>
               </span>
-                Hey dude you are so fanny and all yours are fantastic . keep
-                doing great coz you are really special creature
+                Hey dude you are so funny and all yours are fantastic all over the world . keep
+                doing great coz you are really special creature. i repeat again you are so special
+                that your blogs and motivations are building my future. Big up!
             </message>
-        </div>
-        <div class="modification-option-for-message">
+          </div>
+          <div class="modification-option-for-message">
             <button class="dash-reply-btn">
-              Reply
+                Reply
             </button>
             <button  class="dash-delete-message">
-            Delete
+              Delete
             </button>
-        </div>
+          </div>
       </div>
       <div class="dash-for-every-message">
         <div class="message-to-edit">
-            <p>
-              <strong>Sender: </strong><sender>anzagwaneza@gmail.com</sender>
+            <p id="sender-names">
+              <strong>Names: </strong><sender>Ndizihiwe</sender>
+            </p>
+            <p id="sender-email">
+              <strong>Email: </strong><sender>ndizihiwe.Eric@gmail.com</sender>
             </p>
             <message>
               <span>
                 <strong> Message: </strong>
               </span>
-                Hey dude you are so fanny and all yours are fantastic . keep
-                doing great coz you are really special creature
+                Hey dude you are so funny and all yours are fantastic all over the world . keep
+                doing great coz you are really special creature. i repeat again you are so special
+                that your blogs and motivations are building my future. Big up!
             </message>
-        </div>
-        <div class="modification-option-for-message">
+          </div>
+          <div class="modification-option-for-message">
             <button class="dash-reply-btn">
-              Reply
+                Reply
             </button>
             <button  class="dash-delete-message">
-            Delete
+              Delete
             </button>
-        </div>
+          </div>
       </div>
       <div class="dash-for-every-message">
         <div class="message-to-edit">
-            <p>
-              <strong>Sender: </strong><sender>anzagwaneza@gmail.com</sender>
+            <p id="sender-names">
+              <strong>Names: </strong><sender>Ndizihiwe</sender>
+            </p>
+            <p id="sender-email">
+              <strong>Email: </strong><sender>ndizihiwe.Eric@gmail.com</sender>
             </p>
             <message>
               <span>
                 <strong> Message: </strong>
               </span>
-                Hey dude you are so fanny and all yours are fantastic . keep
-                doing great coz you are really special creature
+                Hey dude you are so funny and all yours are fantastic all over the world . keep
+                doing great coz you are really special creature. i repeat again you are so special
+                that your blogs and motivations are building my future. Big up!
             </message>
-        </div>
-        <div class="modification-option-for-message">
+          </div>
+          <div class="modification-option-for-message">
             <button class="dash-reply-btn">
-              Reply
+                Reply
             </button>
             <button  class="dash-delete-message">
-            Delete
+              Delete
             </button>
-        </div>
-      </div>
-      <div class="dash-for-every-message">
-        <div class="message-to-edit">
-            <p>
-              <strong>Sender: </strong><sender>anzagwaneza@gmail.com</sender>
-            </p>
-            <message>
-              <span>
-                <strong> Message: </strong>
-              </span>
-                Hey dude you are so fanny and all yours are fantastic . keep
-                doing great coz you are really special creature
-            </message>
-        </div>
-        <div class="modification-option-for-message">
-            <button class="dash-reply-btn">
-              Reply
-            </button>
-            <button  class="dash-delete-message">
-            Delete
-            </button>
-        </div>
-      </div>
-      <div class="dash-for-every-message">
-        <div class="message-to-edit">
-            <p>
-              <strong>Sender: </strong><sender>anzagwaneza@gmail.com</sender>
-            </p>
-            <message>
-              <span>
-                <strong> Message: </strong>
-              </span>
-                Hey dude you are so fanny and all yours are fantastic . keep
-                doing great coz you are really special creature
-            </message>
-        </div>
-        <div class="modification-option-for-message">
-            <button class="dash-reply-btn">
-              Reply
-            </button>
-            <button  class="dash-delete-message">
-            Delete
-            </button>
-        </div>
+          </div>
       </div>
 
         `;
@@ -337,3 +368,40 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+function addingBlog() {
+  addBlogs.addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent default behavior
+
+    dashGeneralDisplayArea.innerHTML = `
+    <div id="topInputs">
+      <input type="text" id="textTitle" placeholder="Enter the title" />
+      <input
+        type="text"
+        id="Authorname"
+        placeholder="Enter the name of Author"
+      />
+      <label for="profilePicture">Upload Profile Picture</label>
+      <input type="file" id="profilePicture" accept="image/*" />
+      <br />
+      <label for="mainPicture">Upload a Picture</label>
+      <input type="file" id="mainPicture" accept="image/*" />
+    </div>
+    <div class="dash-real-art-input">
+      <div id="bottomText">
+        <textarea
+          name=""
+          id="dash-real-article-text"
+          placeholder="Write the Article"
+        ></textarea>
+      </div>
+    </div>
+    <div>
+      <button id="dash-submit-Btn">
+        <i class="fas fa-paper-plane"></i> Submit
+      </button>
+    </div>     
+    `;
+  });
+}
+addingBlog();

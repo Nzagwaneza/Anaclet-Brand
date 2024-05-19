@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="Articleview.css" />
     <link rel="stylesheet" href="Dashboard.css" />
     <link rel="stylesheet" href="dashboard2.css" />
+    <link rel="stylesheet" href="Subscribe.css" />
 
     <link
       rel="stylesheet"
@@ -31,8 +32,30 @@
         <img class="brand-name" src="Icons/logo.JPG" alt="Logo" />
         <div class="hm-header-menu-large">
           <a href="Login.html" class="hm-header-link1">Login</a>
-          <a href="" id="openSubscribe" class="hm-header-link2">Subscribe</a>
-          <span id="openModal" class="hm-header-link3">Contact Me</span>
+          <a href="" class="openSubscribe" class="hm-header-link2">Subscribe</a>
+              <!-- Subscribe Modal -->
+              <div id="myModalsubscribe" class="modalsubscribe">
+                <div class="modal-content-wrapper">
+                    <img src="Icons/subscribeImg.png" alt="Subscribe Image">
+                    <div class="modal-content">
+                        <span id="closeModalsubscribe" class="closesubscribe">&times;</span>
+                        <span>Subscribe to this website</span>
+                        <p>Stay updated with our latest articles, and exclusive 
+                          content delivered straight to your inbox.</p>
+                        <form id="subscribeForm">
+                            <input type="email" name="email" id="email" placeholder="Your Email" />
+                            <button type="button" id="submitSubscribe">Subscribe</button>
+                        </form>
+                        <div class="modal-footer">
+                            <span id="emailError" class="error"></span>
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <!-- End Subscribe Modal -->
+          <a href="#footer" id="contact-me-link" class="hm-header-link3">
+            Contact Me
+          </a>
         </div>
         <img
           class="profilepic"
@@ -42,10 +65,29 @@
       </div>
       <div class="hm-header-menu-small">
         <a href="Login.html" class="hm-header-link1">Login</a>
-        <a href="" class="hm-header-link2">Subscribe</a>
-        <a href="#" id="contact_link_small" class="hm-header-link3"
-          >Contact Me</a
-        >
+        <a href="" class="openSubscribe" class="hm-header-link2">Subscribe</a>
+              <!-- Subscribe Modal -->
+              <div id="myModalsubscribe" class="modalsubscribe">
+                <div class="modal-content-wrapper">
+                    <img src="Icons/subscribeImg.png" alt="Subscribe Image">
+                    <div class="modal-content">
+                        <span id="closeModalsubscribe" class="closesubscribe">&times;</span>
+                        <span>Subscribe to this website</span>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum dolorem, dolore quia reprehenderit praesentium quas quod.</p>
+                        <form id="subscribeForm">
+                            <input type="email" name="email" id="email" placeholder="Your Email" />
+                            <button type="button" id="submitSubscribe">Subscribe</button>
+                        </form>
+                        <div class="modal-footer">
+                            <span id="emailError" class="error"></span>
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <!-- End Subscribe Modal -->
+        <a href="#footer" id="contact_link_small" class="hm-header-link3">
+          Contact Me
+        </a>
       </div>
     </div>
     <div class="hm-menu">
@@ -421,10 +463,10 @@
         <div id="dash-about-artice">
           <span><strong>Manage Article</strong></span>
           <button class="dash-add-art"><i class="fas fa-plus"></i>Article</button>
-          <button id="dash-art-editing" class="dash-modify-art"><i class="fas fa-edit"></i>Article</button>
+          <button id="dash-art-editing" class="dash-modify-art"  onclick="displayAllBlogs()"><i class="fas fa-edit"></i>Article</button>
         </div>
-        <div>
-          <a class="menu" id="dash-all-blogs" href=""
+        <div > 
+          <a class="menu" id="dash-all-blogs"  href="" 
             ><i class="fas fa-chart-bar"></i> <strong>List of blogs</strong></a
           >
         </div>
@@ -448,7 +490,7 @@
         </div>
       </div>
       <div class="dash-container-modification-area">
-        <div id="topInputs">
+        <!-- <div id="topInputs">
           <input type="text" id="textTitle" placeholder="Enter the title" />
           <input
             type="text"
@@ -474,9 +516,60 @@
           <button id="dash-submit-Btn">
             <i class="fas fa-paper-plane"></i> Submit
           </button>
-        </div>
+        </div> -->
       </div>
     </div>
+    <footer id="footer">
+      <div class="direction-to">
+        <div class="attention-grab">
+            <span> <strong>Do you really need to become a very special Developer? <br></strong></span>
+            <span>Join me for access to millions of resources to help you on your programming journey.</span>
+        </div>
+        <div class="director">
+          <button type="button" onclick="window.location.href='Signup.html'">Sign In</button>
+          <button type="button" onclick="window.location.href='Login.html'">Log In</button>
+        </div>
+        <div class="contact-us">
+          <div class="messaging-us">
+            <h1>Contact me</h1>
+            <span>Have any questions or suggestions? Feel free to reach out below. 
+              We'd love to hear your feedback and ideas.
+            </span>
+            <div class="name-and-email-inputs">
+              <input type="text" name="name" id="" placeholder="Your name">
+              <input type="email" name="" id="" placeholder="Your Email">
+            </div>
+            <textarea name="message" id="message-for-admin" cols="10" rows="5" placeholder="Write your message here!"></textarea>
+            <button type="submit">send your Message</button>
+          </div>
+          <div class="quick-link">
+            <div class="follow_me">
+              <h1>Get in touch</h1>
+              <div class="icon-list">
+              <i id="linkedin" class="fab fa-linkedin"></i>
+              <i id="twitter" class="fab fa-twitter"></i>
+              <i id="youtube" class="fab fa-youtube"></i>
+              <i id="facebook"><i class="fab fa-facebook"></i>
+              </div>
+              <div class="other-means-contact">
+                <span>anzagwaneza@gmail.com</span>
+                <span>+250787715227</span>
+              </div>
+            </div>
+            <div class="explore-this">
+              <h1>Explore</h1>
+              <div>
+                <a href="#home">Home page</a>
+                <a href="#about-me">About Me</a>
+                <a href="#skills">My skills</a>
+                <a href="#articles">All Blogs</a>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
     <script src="index.js"></script>
+    <script src="Subscribe.js"></script>
   </body>
 </html>
