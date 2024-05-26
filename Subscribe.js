@@ -1,59 +1,67 @@
 document.addEventListener("DOMContentLoaded", function () {
-  var modalSubscribe = document.getElementById("myModalsubscribe");
-  var closeButtonSubscribe = document.getElementById("closeModalsubscribe");
-  var emailInput = document.getElementById("email");
-  var emailError = document.getElementById("emailError");
-  var submitSubscribeButton = document.getElementById("submitSubscribe");
+  var modalsSubscribe = document.querySelectorAll(".modalsubscribe");
+  var closeButtonsSubscribe = document.querySelectorAll(".closesubscribe");
+  var emailInputs = document.querySelectorAll(".email");
+  var emailErrors = document.querySelectorAll(".emailError");
+  var submitSubscribeButtons = document.querySelectorAll(".submitSubscribe");
+  var openSubscribeLinks = document.querySelectorAll(".openSubscribe");
 
-  function openModal() {
-    modalSubscribe.style.display = "flex";
-    resetForm();
+  function openModal(modal) {
+    modal.style.display = "flex";
+    resetForm(modal);
   }
 
-  function closeModal() {
-    modalSubscribe.style.display = "none";
+  function closeModal(modal) {
+    modal.style.display = "none";
   }
 
-  // Function to reset the form and clear messages
-  function resetForm() {
+  function resetForm(modal) {
+    var emailInput = modal.querySelector(".email");
+    var emailError = modal.querySelector(".emailError");
     emailInput.value = "";
     emailError.textContent = "";
-    emailError.className = "";
+    emailError.className = "emailError error";
   }
 
-  // Close the modal when the close button is clicked
-  closeButtonSubscribe.addEventListener("click", closeModal);
-
-  window.addEventListener("click", function (event) {
-    if (event.target == modalSubscribe) {
-      closeModal();
-    }
+  openSubscribeLinks.forEach((link, index) => {
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+      openModal(modalsSubscribe[index]);
+    });
   });
 
-  submitSubscribeButton.addEventListener("click", function () {
-    emailError.textContent = "";
-    if (!isValidEmail(emailInput.value)) {
-      displayMessage("Please enter a valid email address", "error");
-      return;
-    }
-    displayMessage("Subscription successful!", "success");
-    emailInput.value = "";
+  closeButtonsSubscribe.forEach((button, index) => {
+    button.addEventListener("click", function () {
+      closeModal(modalsSubscribe[index]);
+    });
+  });
+
+  submitSubscribeButtons.forEach((button, index) => {
+    button.addEventListener("click", function () {
+      var emailInput = emailInputs[index];
+      var emailError = emailErrors[index];
+      emailError.textContent = "";
+      if (!isValidEmail(emailInput.value)) {
+        displayMessage(
+          "Please enter a valid email address",
+          "error",
+          emailError
+        );
+        return;
+      }
+
+      displayMessage("Subscription successful!", "success", emailError);
+      emailInput.value = ""; // Reset the email input field
+    });
   });
 
   function isValidEmail(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   }
 
-  function displayMessage(message, type) {
+  function displayMessage(message, type, emailError) {
     emailError.textContent = message;
-    emailError.className = type; // Add a class to indicate message type
+    emailError.className =
+      type === "error" ? "emailError error" : "emailError success";
   }
-
-  // Add event listener to the Subscribe link
-  document
-    .querySelector(".openSubscribe")
-    .addEventListener("click", function (event) {
-      event.preventDefault();
-      openModal();
-    });
 });

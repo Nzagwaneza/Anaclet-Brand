@@ -33,26 +33,25 @@
         <div class="hm-header-menu-large">
           <a href="Login.html" class="hm-header-link1">Login</a>
           <a href="" class="openSubscribe" class="hm-header-link2">Subscribe</a>
-              <!-- Subscribe Modal -->
-              <div id="myModalsubscribe" class="modalsubscribe">
-                <div class="modal-content-wrapper">
-                    <img src="Icons/subscribeImg.png" alt="Subscribe Image">
-                    <div class="modal-content">
-                        <span id="closeModalsubscribe" class="closesubscribe">&times;</span>
-                        <span>Subscribe to this website</span>
-                        <p>Stay updated with our latest articles, and exclusive 
-                          content delivered straight to your inbox.</p>
-                        <form id="subscribeForm">
-                            <input type="email" name="email" id="email" placeholder="Your Email" />
-                            <button type="button" id="submitSubscribe">Subscribe</button>
-                        </form>
-                        <div class="modal-footer">
-                            <span id="emailError" class="error"></span>
-                        </div>
-                    </div>
+          <!-- Subscribe Modal -->
+          <div id="myModalsubscribe" class="modalsubscribe">
+            <div class="modal-content-wrapper">
+              <span id="closeModalsubscribe" class="closesubscribe">&times;</span>
+              <img src="Icons/subscribeImg.png" alt="Subscribe Image">
+              <div class="modal-content">
+                <span>Subscribe to this website</span>
+                <p>Stay updated with the latest news, special offers, and exclusive content. 
+                  Join our community and never miss out!</p>                <form class="subscribeForm">
+                  <input type="email" name="email" id="email" class="email" placeholder="Your Email" />
+                  <button type="button" class="submitSubscribe">Subscribe</button>
+                </form>
+                <div class="modal-footer">
+                  <span class="emailError error"></span>
                 </div>
               </div>
-              <!-- End Subscribe Modal -->
+            </div>
+          </div>
+          <!-- End Subscribe Modal -->
           <a href="#footer" id="contact-me-link" class="hm-header-link3">
             Contact Me
           </a>
@@ -66,25 +65,26 @@
       <div class="hm-header-menu-small">
         <a href="Login.html" class="hm-header-link1">Login</a>
         <a href="" class="openSubscribe" class="hm-header-link2">Subscribe</a>
-              <!-- Subscribe Modal -->
-              <div id="myModalsubscribe" class="modalsubscribe">
-                <div class="modal-content-wrapper">
-                    <img src="Icons/subscribeImg.png" alt="Subscribe Image">
-                    <div class="modal-content">
-                        <span id="closeModalsubscribe" class="closesubscribe">&times;</span>
-                        <span>Subscribe to this website</span>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum dolorem, dolore quia reprehenderit praesentium quas quod.</p>
-                        <form id="subscribeForm">
-                            <input type="email" name="email" id="email" placeholder="Your Email" />
-                            <button type="button" id="submitSubscribe">Subscribe</button>
-                        </form>
-                        <div class="modal-footer">
-                            <span id="emailError" class="error"></span>
-                        </div>
-                    </div>
+          <!-- Subscribe Modal -->
+          <div id="myModalsubscribe" class="modalsubscribe">
+            <div class="modal-content-wrapper">
+
+              <img src="Icons/subscribeImg.png" alt="Subscribe Image">
+              <div class="modal-content">
+                <span>Subscribe to this website</span>
+                <span id="closeModalsubscribe" class="closesubscribe">&times;</span>
+                <p>Stay updated with the latest news, special offers, and exclusive content. Join our community and never miss out!</p>
+                <form class="subscribeForm">
+                  <input type="email" name="email" id="email" class="email" placeholder="Your Email" />
+                  <button type="button" class="submitSubscribe">Subscribe</button>
+                </form>
+                <div class="modal-footer">
+                  <span class="emailError error"></span>
                 </div>
               </div>
-              <!-- End Subscribe Modal -->
+            </div>
+          </div>
+          <!-- End Subscribe Modal -->
         <a href="#footer" id="contact_link_small" class="hm-header-link3">
           Contact Me
         </a>
@@ -536,11 +536,11 @@
               We'd love to hear your feedback and ideas.
             </span>
             <div class="name-and-email-inputs">
-              <input type="text" name="name" id="" placeholder="Your name">
-              <input type="email" name="" id="" placeholder="Your Email">
+              <input type="text" name="name" id="ft-sender's-name" placeholder="Your name">
+              <input type="email" name="" id="ft-sender's-email" placeholder="Your Email">
             </div>
-            <textarea name="message" id="message-for-admin" cols="10" rows="5" placeholder="Write your message here!"></textarea>
-            <button type="submit">send your Message</button>
+            <textarea name="message" id="ft-message-to-admin" cols="10" rows="5" placeholder="Write your message here!"></textarea>
+            <button type="submit"  id="ft-submit-message"  onclick="addMessage()">send your Message</button>
           </div>
           <div class="quick-link">
             <div class="follow_me">
@@ -571,5 +571,6 @@
     </footer>
     <script src="index.js"></script>
     <script src="Subscribe.js"></script>
+    <script src="crud.js"></script>
   </body>
 </html>

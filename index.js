@@ -115,32 +115,6 @@ function displayAllMessages() {
     <div class="dash-listing-title">List of all Messages</div>
     <div>
       <div class="dash-for-every-message">
-        <div class="message-to-edit">
-            <p id="sender-names">
-              <strong>Names: </strong><sender>Ndizihiwe</sender>
-            </p>
-            <p id="sender-email">
-              <strong>Email: </strong><sender>ndizihiwe.Eric@gmail.com</sender>
-            </p>
-            <message>
-              <span>
-                <strong> Message: </strong>
-              </span>
-                Hey dude you are so funny and all yours are fantastic all over the world . keep
-                doing great coz you are really special creature. i repeat again you are so special
-                that your blogs and motivations are building my future. Big up!
-            </message>
-          </div>
-          <div class="modification-option-for-message">
-            <button class="dash-reply-btn">
-                Reply
-            </button>
-            <button  class="dash-delete-message">
-              Delete
-            </button>
-          </div>
-      </div>
-      <div class="dash-for-every-message">
       <div class="message-to-edit">
         <p id="sender-names">
           <strong>Names: </strong><sender>Ndizihiwe</sender>
@@ -152,9 +126,7 @@ function displayAllMessages() {
           <span>
             <strong> Message: </strong>
           </span>
-            Hey dude you are so funny and all yours are fantastic all over the world . keep
-            doing great coz you are really special creature. i repeat again you are so special
-            that your blogs and motivations are building my future. Big up!
+            Hey dude you are so funny and all yours are fantastic all over the world .  Big up!
         </message>
         </div>
         <div class="modification-option-for-message">
@@ -166,111 +138,8 @@ function displayAllMessages() {
           </button>
         </div>
       </div>
-      <div class="dash-for-every-message">
-        <div class="message-to-edit">
-            <p id="sender-names">
-              <strong>Names: </strong><sender>Ndizihiwe</sender>
-            </p>
-            <p id="sender-email">
-              <strong>Email: </strong><sender>ndizihiwe.Eric@gmail.com</sender>
-            </p>
-            <message>
-              <span>
-                <strong> Message: </strong>
-              </span>
-                Hey dude you are so funny and all yours are fantastic all over the world . keep
-                doing great coz you are really special creature. i repeat again you are so special
-                that your blogs and motivations are building my future. Big up!
-            </message>
-          </div>
-          <div class="modification-option-for-message">
-            <button class="dash-reply-btn">
-                Reply
-            </button>
-            <button  class="dash-delete-message">
-              Delete
-            </button>
-          </div>
-      </div>
-      <div class="dash-for-every-message">
-        <div class="message-to-edit">
-            <p id="sender-names">
-              <strong>Names: </strong><sender>Ndizihiwe</sender>
-            </p>
-            <p id="sender-email">
-              <strong>Email: </strong><sender>ndizihiwe.Eric@gmail.com</sender>
-            </p>
-            <message>
-              <span>
-                <strong> Message: </strong>
-              </span>
-                Hey dude you are so funny and all yours are fantastic all over the world . keep
-                doing great coz you are really special creature. i repeat again you are so special
-                that your blogs and motivations are building my future. Big up!
-            </message>
-          </div>
-          <div class="modification-option-for-message">
-            <button class="dash-reply-btn">
-                Reply
-            </button>
-            <button  class="dash-delete-message">
-              Delete
-            </button>
-          </div>
-      </div>
-      <div class="dash-for-every-message">
-        <div class="message-to-edit">
-            <p id="sender-names">
-              <strong>Names: </strong><sender>Ndizihiwe</sender>
-            </p>
-            <p id="sender-email">
-              <strong>Email: </strong><sender>ndizihiwe.Eric@gmail.com</sender>
-            </p>
-            <message>
-              <span>
-                <strong> Message: </strong>
-              </span>
-                Hey dude you are so funny and all yours are fantastic all over the world . keep
-                doing great coz you are really special creature. i repeat again you are so special
-                that your blogs and motivations are building my future. Big up!
-            </message>
-          </div>
-          <div class="modification-option-for-message">
-            <button class="dash-reply-btn">
-                Reply
-            </button>
-            <button  class="dash-delete-message">
-              Delete
-            </button>
-          </div>
-      </div>
-      <div class="dash-for-every-message">
-        <div class="message-to-edit">
-            <p id="sender-names">
-              <strong>Names: </strong><sender>Ndizihiwe</sender>
-            </p>
-            <p id="sender-email">
-              <strong>Email: </strong><sender>ndizihiwe.Eric@gmail.com</sender>
-            </p>
-            <message>
-              <span>
-                <strong> Message: </strong>
-              </span>
-                Hey dude you are so funny and all yours are fantastic all over the world . keep
-                doing great coz you are really special creature. i repeat again you are so special
-                that your blogs and motivations are building my future. Big up!
-            </message>
-          </div>
-          <div class="modification-option-for-message">
-            <button class="dash-reply-btn">
-                Reply
-            </button>
-            <button  class="dash-delete-message">
-              Delete
-            </button>
-          </div>
-      </div>
-
+    </div>
+     
         `;
   });
 }
