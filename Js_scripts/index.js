@@ -13,42 +13,20 @@ function displayAllUsers() {
     event.preventDefault(); // Prevent default behavior
 
     dashGeneralDisplayArea.innerHTML = `
-    <div>
-        <div class="dash-listing-title">List of all users</div>
-        <div class="dash-for-every-user">
-            <div class="user-to-change">
-                <div>
-                <strong>Username: </strong><user>ndizihiwe.Eric@gmail.com</user>
-                </div>
-                <div><strong>Role: </strong><role>admin</role></div>
+    <div class="dash-display-zone">
+      <div class="dash-listing-title">List of all users</div>
+      <div class="dash-for-every-user">
+        <div class="user-to-change">
+            <div>
+            <strong>Username: </strong><user>ndizihiwe.Eric@gmail.com</user>
             </div>
-            <div class="modification-option">
-                <button class="dash-change-role-btn">Change</button>
-                <button class="dash-delete-message">Delete</button>
-            </div>
+            <div><strong>Role: </strong><role>admin</role></div>
         </div>
-        <div class="dash-for-every-user">
-            <div class="user-to-change">
-                <div>
-                <strong>Username: </strong><user>ndizihiwe.Eric@gmail.com</user>
-                </div>
-                <div><strong>Role: </strong><role>admin</role></div>
-            </div>
-            <div class="modification-option">
-                <button class="dash-change-role-btn">Change</button>
-                <button class="dash-delete-message">Delete</button>
-            </div>
+        <div class="modification-option">
+            <button class="dash-change-role-btn">Change</button>
+            <button class="dash-delete-message">Delete</button>
         </div>
-        <div class="dash-for-every-user">
-            <div class="user-to-change">
-                <div><strong>Username: </strong><user>anaclet Nzg</user></div>
-                <div><strong>Role: </strong><role>user</role></div>
-            </div>
-            <div class="modification-option">
-                <button class="dash-change-role-btn">Change</button>
-                <button class="dash-delete-message">Delete</button>
-            </div>
-        </div>
+      </div>
     </div>       
         `;
   });
@@ -61,34 +39,19 @@ function displayAllBlogs(event) {
         List of all Blogs
     </div>
     <div class="all-blogs-list">
-        <div class="dash-for-every-message">
-          <div class="title-blog-to-edit">
-              <span>
-                  Mastering Figma designing
-              </span>
-          </div>
-          <div class="modification-option">
-              <button class="dash-moddy-btn" id="dash-edit-blog">
-              Edit
-              </button>
-              <button  class="dash-delete-message">
-              Delete
-              </button>
-          </div>
-        </div>
-        <div class="dash-for-every-message">
+      <div class="dash-for-every-message">
         <div class="title-blog-to-edit">
-            <span>
-                Coding is no longer that hard
-            </span>
+          <span>
+              Coding is no longer that hard
+          </span>
         </div>
         <div class="modification-option">
-            <button class="dash-moddy-btn" id="dash-edit-blog">
-            Edit
-            </button>
-            <button  class="dash-delete-message">
-            Delete
-            </button>
+          <button class="dash-moddy-btn" id="dash-edit-blog">
+          Edit
+          </button>
+          <button  class="dash-delete-message">
+          Delete
+          </button>
         </div>
       </div>
     </div>
@@ -113,7 +76,7 @@ function displayAllMessages() {
     dashGeneralDisplayArea.innerHTML = `
 
     <div class="dash-listing-title">List of all Messages</div>
-    <div>
+    <div class="dash-display-zone">
       <div class="dash-for-every-message">
       <div class="message-to-edit">
         <p id="sender-names">
@@ -158,60 +121,62 @@ function displayAllSkills() {
         placeholder="Enter the acquired skills"
       />
       <label for="skills-describing-image">Upload the Picture</label>
-      <input type="file" id="profilePicture" accept="image/*" />
-        <div class="dash-add-skills">
-            <button type="submit" class="dash-add-skills-btn">
-            Add skills
-            </button>
-        </div>
+      <input type="file" class="skills-describing-picture" accept="image/*" />
+      <div id="dash-skills-error"> </div>
+      <div class="dash-add-skills">
+      <button type="submit" onclick="addSkills()" class="dash-add-skills-btn">
+          Add skills
+        </button>
+      </div>
     </div>
-    <div class="dash-skills-lowerside">
-        <div class="skills-container">
-            <div class="dash-skill-item">
-            <strong>Programming language <br /></strong>
-            <div class="My_icons">
-                <i class="fa-brands fa-js"></i>
-                <i class="fa-brands fa-python"></i>
-            </div>
-            <div class="modification-option">
-                <button class="dash-moddy-btn">Edit</button>
-                <button class="dash-delete-skills">Delete</button>
-            </div>
+    <div class="dash-skills-lowerside" class="dash-display-zone">
+      <div class="skills-container">
+        <div class="dash-skill-item">
+          <strong>Programming language <br /></strong>
+          <div class="My_icons">
+              <i class="fa-brands fa-js"></i>
+              <i class="fa-brands fa-python"></i>
+          </div>
+          <div class="modification-option">
+              <button class="dash-moddy-btn">Edit</button>
+              <button class="dash-delete-skills">Delete</button>
+          </div>
         </div>
         <div class="dash-skill-item">
-            <strong>Software development tools <br /></strong>
-            <div class="My_icons">
-                <i class="fa-brands fa-python"></i>
-            </div>
-            <div class="modification-option">
-                <button class="dash-moddy-btn">Edit</button>
-                <button class="dash-delete-skills">Delete</button>
-            </div>
+          <strong>Software development tools <br /></strong>
+          <div class="My_icons">
+              <i class="fa-brands fa-python"></i>
+          </div>
+          <div class="modification-option">
+              <button class="dash-moddy-btn">Edit</button>
+              <button class="dash-delete-skills">Delete</button>
+          </div>
         </div>
         <div class="dash-skill-item">
-            <strong>Web development <br /></strong>
-            <div class="My_icons">
-                <i class="fa-brands fa-python"></i>
-                <i class="fa-brands fa-js"></i>
-                <i class="fa-brands fa-html5"></i>
-            </div>
-            <div class="modification-option">
-                <button class="dash-moddy-btn">Edit</button>
-                <button class="dash-delete-skills">Delete</button>
-            </div>
+          <strong>Web development <br /></strong>
+          <div class="My_icons">
+              <i class="fa-brands fa-python"></i>
+              <i class="fa-brands fa-js"></i>
+              <i class="fa-brands fa-html5"></i>
+          </div>
+          <div class="modification-option">
+              <button class="dash-moddy-btn">Edit</button>
+              <button class="dash-delete-skills">Delete</button>
+          </div>
         </div>
         <div class="dash-skill-item">
-            <strong>Designing and development tools<br /></strong>
-            <div class="My_icons">
-                    <i class="fa-brands fa-python"></i>
-                    <i class="fa-brands fa-js"></i>
-                    <i class="fa-brands fa-html5"></i>
-            </div>
-            <div class="modification-option">
-                <button class="dash-moddy-btn">Edit</button>
-                <button class="dash-delete-skills">Delete</button>
-            </div>
+          <strong>Designing and development tools<br /></strong>
+          <div class="My_icons">
+                  <i class="fa-brands fa-python"></i>
+                  <i class="fa-brands fa-js"></i>
+                  <i class="fa-brands fa-html5"></i>
+          </div>
+          <div class="modification-option">
+              <button class="dash-moddy-btn">Edit</button>
+              <button class="dash-delete-skills">Delete</button>
+          </div>
         </div>
+      </div>
     </div>
         `;
   });

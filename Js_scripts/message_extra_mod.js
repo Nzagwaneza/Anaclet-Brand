@@ -1,54 +1,8 @@
-// TODO: Crud for messages.
-
-let NameOfSenderInput = document.getElementById("ft-sender's-name");
-let NameOfSenderText = NameOfSenderInput.value.trim();
-let EmailOfSenderInput = document.getElementById("ft-sender's-email");
-let EmailOfSenderText = EmailOfSenderInput.value.trim();
-let MessageOfSenderInput = document.getElementById("ft-message-to-admin");
-let MessageOfSenderText = MessageOfSenderInput.value.trim();
-
-let SubmitMessageBtn = document.getElementById("ft-submit-message");
-let displayAllMessagesBtn = document.getElementById("dash-all-messages");
-
-let AllMessages = JSON.parse(localStorage.getItem("Messages")) || {};
-
-document.addEventListener("DOMContentLoaded", (event) => {
-  renderMessages();
-});
+// document.addEventListener("DOMContentLoaded", (event) => {
+//   renderMessages();
+// });
 
 displayAllMessagesBtn.addEventListener("click", renderMessages);
-
-function addMessage() {
-  const NameOfSenderText = NameOfSenderInput.value.trim();
-  const EmailOfSenderText = EmailOfSenderInput.value.trim();
-  const MessageOfSenderText = MessageOfSenderInput.value.trim();
-
-  if (
-    NameOfSenderText === "" ||
-    EmailOfSenderText === "" ||
-    MessageOfSenderText === ""
-  ) {
-    alert("Please fill in the form correctly");
-    return;
-  }
-
-  const messageId = new Date().getTime().toString();
-
-  const message = {
-    name: NameOfSenderText,
-    email: EmailOfSenderText,
-    text: MessageOfSenderText,
-  };
-
-  // Add the message to AllMessages object
-  AllMessages[messageId] = message;
-
-  NameOfSenderInput.value = "";
-  EmailOfSenderInput.value = "";
-  MessageOfSenderInput.value = "";
-  updateLocalStorage();
-  renderMessages();
-}
 
 function renderMessages() {
   const messagesContainers = document.getElementsByClassName(
@@ -70,6 +24,16 @@ function renderMessages() {
 
   const sortedKeys = Object.keys(AllMessages).sort((a, b) => b - a);
 
+  //this  messageListingTitle add General Title
+  const messageListingTitle = document.createElement("div");
+  messageListingTitle.className = "dash-listing-title";
+
+  messageListingTitle.innerHTML = `
+    List of all Messages
+  `;
+
+  messagesContainer.appendChild(messageListingTitle);
+
   sortedKeys.forEach((key) => {
     const message = AllMessages[key];
     const messageElement = document.createElement("div");
@@ -90,7 +54,7 @@ function renderMessages() {
         </message>
       </div>
       <div class="modification-option-for-message">
-        <button class="dash-reply-btn">Reply</button>
+        <button class="dash-reply-btn" onclick="replyToEmail('${message.email}')">Reply</button>
         <button class="dash-delete-message" onclick="deleteMessage('${key}')">Delete</button>
       </div>
     </div>
@@ -105,10 +69,14 @@ function deleteMessage(key) {
     return;
   }
   delete AllMessages[key];
-  updateLocalStorage();
+  updateMessageLocalStorage();
   renderMessages();
 }
 
-function updateLocalStorage() {
+function updateMessageLocalStorage() {
   localStorage.setItem("AllMessages", JSON.stringify(AllMessages));
+}
+
+function replyToEmail(email) {
+  window.location.href = `mailto:${email}`;
 }

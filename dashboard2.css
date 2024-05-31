@@ -30,6 +30,28 @@
   background-color: hsl(0, 70%, 59%);
 }
 
+#dash-message-error.fail {
+  color: hsl(64, 100%, 50%);
+  margin-bottom: 5px;
+}
+
+#dash-message-error.success {
+  color: hsl(108.52deg 100% 50%);
+  margin-bottom: 5px;
+}
+
+#dash-skills-error.fail {
+  color: hsl(337, 100%, 50%);
+  margin-top: 1em;
+  font-weight: bolder;
+}
+
+#dash-skills-error.success {
+  color: hsl(108deg 93.18% 46.54%);
+  margin-top: 1em;
+  font-weight: bolder;
+}
+
 .dash-for-every-message,
 .dash-for-every-user {
   display: flex;
@@ -87,6 +109,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+}
+
+img.skills-image {
+  width: 200px;
+  height: 80px;
+  object-fit: cover;
 }
 
 div#dash-top-input {
