@@ -140,7 +140,7 @@ html {
 }
 
 /* Responsive styling */
-@media (max-width: 768px) {
+@media (min-width: 769px) and (max-width: 1000px) {
   .modal-content-wrapper {
     width: 90%;
   }
@@ -168,5 +168,38 @@ html {
     transition: color 0.3s;
     color: #e54545;
     scale: 1.8;
+  }
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .modal-content-wrapper {
+    width: 90%;
+  }
+
+  .modal-content-wrapper img {
+    max-height: 150px;
+  }
+
+  .modal-content span {
+    font-size: 1.2em;
+  }
+
+  .modal-content p {
+    font-size: 0.8em;
+    margin-bottom: 20px;
+  }
+
+  .closesubscribe {
+    position: absolute;
+    top: -35px;
+    right: 30px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+    color: #e54545;
+    scale: 1.5;
+    background-color: #e3a692;
   }
 }
