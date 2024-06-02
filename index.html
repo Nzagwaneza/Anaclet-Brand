@@ -146,7 +146,7 @@
     </div>
     <div class="skills-section" id="skills">
       <strong>My skills are summarized here below:</strong>
-      <div class="skills-container">
+      <div id="skills-container">
         <div class="skill-item">
           <strong>Programming language <br /></strong>
           <div class="My_icons">
@@ -494,7 +494,7 @@
           <input type="text" id="textTitle" placeholder="Enter the title" />
           <input
             type="text"
-            id="Authorname"
+            id="Author-name"
             placeholder="Enter the name of Author"
           />
           <label for="profilePicture">Upload Profile Picture</label>
@@ -512,8 +512,9 @@
             ></textarea>
           </div>
         </div>
+        <div id="dash-blogs-error"></div>  
         <div>
-          <button id="dash-submit-Btn">
+          <button id="dash-submit-Blog-Btn">
             <i class="fas fa-paper-plane"></i> Submit
           </button>
         </div> -->
@@ -572,9 +573,12 @@
     </footer>
     <script src="Js_scripts/index.js"></script>
     <script src="Js_scripts/Subscribe.js"></script>
-    <script src="Js_scripts/adding_message.js"></script>
-    <script src="Js_scripts/message_extra_mod.js"></script>
-    <script src="Js_scripts/adding_skills.js"></script>
-    <script src="Js_scripts/skills_extra_mod.js"></script>
+    <script src="Js_scripts/messageToLS.js"></script>
+    <script src="Js_scripts/messageToDash.js"></script>
+    <script src="Js_scripts/skillsToLS.js"></script>
+    <script src="Js_scripts/skillsToDash.js"></script>
+    <script src="Js_scripts/SkillFromLsToSection.js"></script>
+    <script src="Js_scripts/blogsToLS.js"></script>
+    <script src="Js_scripts/blogsToDash.js"></script>
   </body>
 </html>

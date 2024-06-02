@@ -1,7 +1,3 @@
-// document.addEventListener("DOMContentLoaded", (event) => {
-//   renderMessages();
-// });
-
 displayAllMessagesBtn.addEventListener("click", renderMessages);
 
 function renderMessages() {
@@ -61,6 +57,7 @@ function renderMessages() {
     `;
     messagesContainer.appendChild(messageElement);
   });
+  window.renderMessages = renderMessages;
 }
 
 function deleteMessage(key) {

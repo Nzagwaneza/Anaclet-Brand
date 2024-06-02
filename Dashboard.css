@@ -32,7 +32,7 @@
   justify-content: space-between;
 }
 
-#dash-submit-Btn,
+#dash-submit-Blog-Btn,
 .dash-modify-art,
 .dash-add-art {
   margin-bottom: 10px;
@@ -45,7 +45,7 @@
 }
 
 #dash-real-article-text {
-  height: 47vh;
+  height: 30vh;
 }
 
 button:hover {

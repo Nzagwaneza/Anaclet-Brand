@@ -46,13 +46,26 @@
   font-weight: bolder;
 }
 
+#dash-blogs-error.fail {
+  color: hsl(337, 100%, 50%);
+  font-weight: bolder;
+  margin-bottom: 5px;
+}
+
 #dash-skills-error.success {
   color: hsl(108deg 93.18% 46.54%);
   margin-top: 1em;
   font-weight: bolder;
 }
 
+#dash-blogs-error.success {
+  color: hsl(108deg 93.18% 46.54%);
+  font-weight: bolder;
+  margin-bottom: 5px;
+}
+
 .dash-for-every-message,
+.dash-for-every-single-blog,
 .dash-for-every-user {
   display: flex;
   flex-direction: row;

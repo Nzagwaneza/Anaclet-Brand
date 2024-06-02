@@ -1,16 +1,19 @@
+document.addEventListener("DOMContentLoaded", () => {
+  renderSkillsToSkillSection();
+});
+
 // const allSkills = document.body.querySelector("#dash-add-skills");
 allSkills.addEventListener("click", renderSkills);
 
 function renderSkills() {
-  console.log("renderSkills function is called");
-  const skillsContainer = document.querySelector(".skills-container");
+  const dashSkillsContainer = document.querySelector(".skills-container"); //container in dashboard
 
-  if (!skillsContainer) {
-    console.error("No container found with the class 'skills-container'");
+  if (!dashSkillsContainer) {
+    console.error("No container found with the class 'dashSkillsContainer'");
     return;
   }
 
-  skillsContainer.innerHTML = "";
+  dashSkillsContainer.innerHTML = "";
 
   const AllSkills = JSON.parse(localStorage.getItem("AllSkills")) || {};
 
@@ -29,29 +32,16 @@ function renderSkills() {
     </div>
     <div class="modification-option">
         <button class="dash-moddy-btn">Edit</button>
-        <button class="dash-delete-skills" onclick="deleteMessage('${key}')">Delete</button>
+        <button class="dash-delete-skills" onclick="deleteSkills('${key}')">Delete</button>
     </div>
     `;
-    skillsContainer.appendChild(skillElement);
+    dashSkillsContainer.appendChild(skillElement);
 
     // this append the list of all skills to the skills displaying area
     // found on lower side of dashboard
     skillsDisplayZone.innerHTML = "";
-    skillsDisplayZone.appendChild(skillsContainer);
+    skillsDisplayZone.appendChild(dashSkillsContainer);
   });
-}
-
-function deleteMessage(key) {
-  const AllSkills = JSON.parse(localStorage.getItem("AllSkills")) || {};
-  if (!AllSkills.hasOwnProperty(key)) {
-    console.error(`Skills with key ${key} does not exist.`);
-    return;
-  }
-  delete AllSkills[key];
-  updateSkillsLocalStorage(AllSkills);
-  renderSkills();
-}
-
-function updateSkillsLocalStorage(allSkills) {
-  localStorage.setItem("AllSkills", JSON.stringify(allSkills));
+  // Attach the function to the window object to make it globally accessible
+  window.renderSkills = renderSkills;
 }

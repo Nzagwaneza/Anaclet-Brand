@@ -392,6 +392,11 @@ a {
 
   .hm-menu,
   .hm-lower-side {
+    max-height: 40px;
+    font-size: 12px;
+  }
+
+  .hm-lower-side {
     max-height: 150px;
     font-size: 12px;
   }

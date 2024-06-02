@@ -1,17 +1,3 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const addSkillsBtn = document.querySelector(".dash-add-skills-btn");
-
-  if (addSkillsBtn) {
-    addSkillsBtn.addEventListener("click", (event) => {
-      event.preventDefault(); // Prevent form submission if button is inside a form
-      addSkills();
-      renderSkills();
-    });
-  } else {
-    console.error("Button with class 'dash-add-skills-btn' not found");
-  }
-});
-
 function addSkills() {
   console.log("addSkills function called");
 
@@ -53,6 +39,8 @@ function addSkills() {
     imgForSkillsInput.value = "";
     updateSkillsLocalStorage();
   });
+  // Attach the function to the window object to make it globally accessible
+  window.addSkills = addSkills;
 
   readerForSkillsImg.readAsDataURL(imgForSkillsFile);
 

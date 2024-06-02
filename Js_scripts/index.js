@@ -39,9 +39,9 @@ function displayAllBlogs(event) {
         List of all Blogs
     </div>
     <div class="all-blogs-list">
-      <div class="dash-for-every-message">
-        <div class="title-blog-to-edit">
-          <span>
+      <div class="dash-for-every-single-blog">
+        <div class="dash-title-blog">
+          <span class="title-blog-to-edit">
               Coding is no longer that hard
           </span>
         </div>
@@ -212,7 +212,7 @@ function addingBlog() {
       <input type="text" id="textTitle" placeholder="Enter the title" />
       <input
         type="text"
-        id="Authorname"
+        id="Author-name"
         placeholder="Enter the name of Author"
       />
       <label for="profilePicture">Upload Profile Picture</label>
@@ -230,8 +230,9 @@ function addingBlog() {
         ></textarea>
       </div>
     </div>
+    <div id="dash-blogs-error"></div>  
     <div>
-      <button id="dash-submit-Btn">
+      <button id="dash-submit-Blog-Btn" onclick="addBlogsToLs()">
         <i class="fas fa-paper-plane"></i> Submit
       </button>
     </div>     
@@ -239,3 +240,21 @@ function addingBlog() {
   });
 }
 addingBlog();
+
+//FIXME: #adding EventListener to the buttons or links from Dashboard
+
+allBlogs.addEventListener("click", () => {
+  displayAllBlogs();
+  renderBlogsToDash();
+});
+
+modifyBlogs.addEventListener("click", () => {
+  displayAllBlogs();
+  renderBlogsToDash();
+});
+// let submitSkillsBtn = document.querySelector(".dash-add-skills-btn");
+// submitSkillsBtn.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   addSkills();
+//   renderSkillsToSkillSection();
+// });
