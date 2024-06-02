@@ -139,8 +139,8 @@ html {
   color: green;
 }
 
-/* Responsive styling */
-@media (min-width: 769px) and (max-width: 1000px) {
+/* Responsive styling for Tablets */
+@media (min-width: 769px) and (max-width: 990px) {
   .modal-content-wrapper {
     width: 90%;
   }
@@ -166,12 +166,13 @@ html {
     font-weight: bold;
     cursor: pointer;
     transition: color 0.3s;
+    background-color: #e3a692;
     color: #e54545;
     scale: 1.8;
   }
 }
 
-/* Responsive styling */
+/* Responsive styling phones*/
 @media (max-width: 768px) {
   .modal-content-wrapper {
     width: 90%;

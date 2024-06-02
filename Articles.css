@@ -48,6 +48,12 @@
   background-color: #c9c9f0;
 }
 
+span#listOfArticles {
+  display: flex;
+  font-weight: bolder;
+  justify-content: space-around;
+  padding-bottom: 1vw;
+}
 .art-topic-related-pic {
   width: 50%;
   height: 100%;

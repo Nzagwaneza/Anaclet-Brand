@@ -241,7 +241,7 @@ function addingBlog() {
 }
 addingBlog();
 
-//FIXME: #adding EventListener to the buttons or links from Dashboard
+//TODO: #adding EventListener to the buttons or links from Dashboard
 
 allBlogs.addEventListener("click", () => {
   displayAllBlogs();
@@ -252,6 +252,8 @@ modifyBlogs.addEventListener("click", () => {
   displayAllBlogs();
   renderBlogsToDash();
 });
+
+// FIXME:
 // let submitSkillsBtn = document.querySelector(".dash-add-skills-btn");
 // submitSkillsBtn.addEventListener("click", (e) => {
 //   e.preventDefault();
