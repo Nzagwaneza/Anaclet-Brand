@@ -48,6 +48,10 @@ img.view-topic-pic {
   border-radius: 11px;
 }
 
+#art-view-section {
+  display: none; /* hiding the article contents by default */
+}
+
 .Big_Main {
   display: flex;
   justify-content: flex-start;

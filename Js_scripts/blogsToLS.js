@@ -1,12 +1,16 @@
 function addBlogsToLs() {
   console.log("We are trying to add a blogs to local storage");
   let AllArticles = JSON.parse(localStorage.getItem("Articles")) || {};
-  let articleTitle = document.getElementById("textTitle").value.trim();
-  let articleAuthor = document.getElementById("Author-name").value.trim();
+  let articleTitleInput = document.getElementById("textTitle");
+  let articleTitle = articleTitleInput.value.trim();
+  let articleAuthorInput = document.getElementById("Author-name");
+  let articleAuthor = articleAuthorInput.value.trim();
   let authorPicForBlog = document.querySelector("#profilePicture");
   let authorPicForBlogFile = authorPicForBlog.files[0];
   let descPicForBlog = document.querySelector("#mainPicture");
   let descPicForBlogFile = descPicForBlog.files[0];
+  let realTextInput = document.getElementById("dash-real-article-text");
+  let realText = realTextInput.value.trim();
   let blogsError = document.getElementById("dash-blogs-error");
 
   if (!blogsError) {
@@ -18,7 +22,8 @@ function addBlogsToLs() {
     articleTitle === "" ||
     articleAuthor === "" ||
     !authorPicForBlogFile ||
-    !descPicForBlogFile
+    !descPicForBlogFile ||
+    realText === ""
   ) {
     blogsError.className = "fail";
     blogsError.innerHTML = `Please fill in this form correctly`;
@@ -33,6 +38,7 @@ function addBlogsToLs() {
       title: articleTitle,
       author: articleAuthor,
       images: [authorImage.result, descImage.result],
+      text: realText,
     };
 
     const articleId = new Date().getTime().toString();
@@ -40,10 +46,11 @@ function addBlogsToLs() {
     AllArticles[articleId] = article;
     blogsError.className = "success";
     blogsError.innerHTML = `Blog added successfully. Thanks!`;
-    articleTitle = "";
-    articleAuthor = "";
+    articleTitleInput.value = "";
+    articleAuthorInput.value = "";
     authorPicForBlog.value = "";
     descPicForBlog.value = "";
+    realTextInput.value = "";
     updateArticlesLocalStorage();
   });
 

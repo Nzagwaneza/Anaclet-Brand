@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
             </div>
             </div>
-                <a href="#art-view-section"><button id="art-viewingBtn">View</button></a>
+                <button class="art-viewingBtn">View</button>
             </div>
           `;
 

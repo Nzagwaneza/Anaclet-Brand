@@ -83,7 +83,7 @@ span#listOfArticles {
   align-items: center;
 }
 
-#art-viewingBtn {
+.art-viewingBtn {
   width: 70px;
   background-color: #6c9efe;
   border-radius: 20px;
@@ -96,7 +96,7 @@ span#listOfArticles {
   }
 
   .art-Right,
-  #art-viewingBtn {
+  .art-viewingBtn {
     font-size: smaller;
   }
 }
