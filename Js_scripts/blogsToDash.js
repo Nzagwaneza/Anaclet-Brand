@@ -5,9 +5,6 @@ let AllArticles = JSON.parse(localStorage.getItem("Articles")) || {};
 
 document.addEventListener("DOMContentLoaded", () => {
   function renderBlogsToDash() {
-    console.log(
-      "this function is designed to add list of all blogs's titles to the dashboard modification area"
-    );
     let blogContainer = document.querySelector(".all-blogs-list");
     blogContainer.innerHTML = "";
 

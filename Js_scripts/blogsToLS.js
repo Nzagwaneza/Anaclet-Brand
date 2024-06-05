@@ -10,7 +10,7 @@ function addBlogsToLs() {
   let descPicForBlog = document.querySelector("#mainPicture");
   let descPicForBlogFile = descPicForBlog.files[0];
   let realTextInput = document.getElementById("dash-real-article-text");
-  let realText = realTextInput.value.trim();
+  let realText = realTextInput.value;
   let blogsError = document.getElementById("dash-blogs-error");
 
   if (!blogsError) {

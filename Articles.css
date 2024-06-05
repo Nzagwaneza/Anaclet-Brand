@@ -52,7 +52,12 @@ span#listOfArticles {
   display: flex;
   font-weight: bolder;
   justify-content: space-around;
-  padding-bottom: 1vw;
+  padding: 1vw;
+}
+
+#listOfArticlesIntro {
+  margin: 9px;
+  text-align: center;
 }
 .art-topic-related-pic {
   width: 50%;

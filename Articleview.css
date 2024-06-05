@@ -61,6 +61,7 @@ img.view-topic-pic {
 .view-combined-par {
   position: relative;
   padding: 0vw 1vw 1vw 1vw;
+  white-space: pre-wrap; /* keep white-space and even the break lines */
 }
 
 .view-art-bottom {
