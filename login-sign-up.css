@@ -96,10 +96,19 @@ input::placeholder {
   font-size: 15px;
 }
 
-#errorBlock {
+#sign-message,
+.error {
   color: red;
   margin-top: 5px;
   font-size: 16px;
+}
+
+#sign-success,
+.success {
+  color: #4400ff;
+  margin-top: 5px;
+  font-size: 16px;
+  font-weight: bolder;
 }
 
 .signup,

@@ -11,6 +11,7 @@
 .dash-moddy-btn,
 .dash-delete-message,
 .dash-delete-skills,
+.dash-delete-user,
 .dash-add-skills-btn {
   margin-bottom: 10px;
   padding: 5px 10px;
@@ -26,6 +27,7 @@
 }
 
 .dash-delete-message,
+.dash-delete-user,
 .dash-delete-skills {
   background-color: hsl(0, 70%, 59%);
 }
@@ -152,6 +154,43 @@ div#dash-top-input {
   font-weight: bolder;
   text-transform: uppercase;
   margin-bottom: 1vw;
+}
+
+.stat-welcome {
+  padding: 3px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.count {
+  width: 130px;
+  background-color: hsl(0, 0%, 91%);
+  border-radius: 10%;
+  display: block;
+  text-align: center;
+  padding: 14px;
+  border: 2px solid;
+}
+
+.number-of-count {
+  padding-top: 4px;
+  font-weight: bolder;
+  margin-right: auto;
+  margin-left: auto;
+  height: 50px;
+  width: 50px;
+  display: grid;
+  border-radius: 50%;
+  background-color: #d9d9d9;
+  color: red;
+  align-items: center;
+  justify-content: center;
+}
+
+#count {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
 /* Mobile Styles */

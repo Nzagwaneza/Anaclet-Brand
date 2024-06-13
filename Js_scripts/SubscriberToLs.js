@@ -51,7 +51,23 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       displayMessage("Subscription successful!", "success", emailError);
-      emailInput.value = ""; // Reset the email input field
+
+      console.log(emailInputs[index].value);
+      let AllSubscribers =
+        JSON.parse(localStorage.getItem("Subscribers")) || {};
+
+      const updateSubscriberLocalStorage = () => {
+        let subscriberId = new Date().getTime().toString();
+        let subscriber = {
+          email: emailInputs[index].value,
+        };
+        AllSubscribers[subscriberId] = subscriber;
+        localStorage.setItem("Subscribers", JSON.stringify(AllSubscribers));
+        console.log("Local storage updated");
+      };
+      updateSubscriberLocalStorage();
+
+      emailInput.value = "";
     });
   });
 

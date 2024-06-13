@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
                   </span>
               </div>
               <div class="modification-option">
-                  <button class="dash-moddy-btn" id="dash-edit-blog">
+                  <button class="dash-moddy-btn" class="dash-edit-blog">
                       Edit
                   </button>
                   <button onclick="deleteBlog(${key})" class="dash-delete-message">

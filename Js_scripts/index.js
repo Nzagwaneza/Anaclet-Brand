@@ -4,6 +4,7 @@ let allUsers = document.body.querySelector("#dash-all-users");
 let allBlogs = document.body.querySelector("#dash-all-blogs");
 let allMessages = document.body.querySelector("#dash-all-messages");
 let allSkills = document.body.querySelector("#dash-add-skills");
+let statistics = document.getElementById("statistics");
 let dashGeneralDisplayArea = document.body.querySelector(
   ".dash-container-modification-area"
 );
@@ -253,10 +254,34 @@ modifyBlogs.addEventListener("click", () => {
   renderBlogsToDash();
 });
 
-// FIXME:
-// let submitSkillsBtn = document.querySelector(".dash-add-skills-btn");
-// submitSkillsBtn.addEventListener("click", (e) => {
-//   e.preventDefault();
-//   addSkills();
-//   renderSkillsToSkillSection();
-// });
+statistics.addEventListener("click", (e) => {
+  e.preventDefault();
+  dashGeneralDisplayArea.innerHTML = `
+
+    <div class="dash-listing-title"> Statistics</div>
+    <p class="stat-welcome">Welcome to the Statistics Section: Here is the summarized info for this brand.</p>
+    <div class="dash-display-zone" id="count">
+      <div class="count">
+        <span class="count-title">Uploaded Blogs</span>
+        <div class="number-of-count" id="count-blogs">14</div>
+      </div>
+      <div class="count">
+        <span class="count-title">Number of Users</span>
+        <div class="number-of-count" id="count-users">14</div>
+      </div>
+      <div class="count">
+        <span class="count-title">All skills</span>
+        <div class="number-of-count" id="count-skills">14</div>
+      </div>
+      <div class="count">
+        <span class="count-title">Messages</span>
+        <div class="number-of-count" id="count-messages">14</div>
+      </div>
+      <div class="count">
+        <span class="count-title">Subscribers</span>
+        <div class="number-of-count" id="count-subscribers">14</div>
+      </div>
+    </div>
+     
+        `;
+});

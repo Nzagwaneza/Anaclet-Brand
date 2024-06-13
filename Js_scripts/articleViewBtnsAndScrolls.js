@@ -33,45 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //  FIXME:adding scroll effects to te header
 
-// let menu = document.querySelector(".hm-menu");
-// let Home = document.getElementById("scrollHome");
-// let About = document.getElementById("scrollAbout");
-// let Skills = document.getElementById("scrollSkills");
-// let Articles = document.getElementById("scrollArticles");
-// let Dash = document.getElementById("scrollDash");
-
-// Home.addEventListener("click", (e) => {
-//   e.preventDefault();
-//   let toHome = document.getElementById("home");
-//   toHome.scrollIntoView({ behavior: "smooth" });
-// });
-
-// About.addEventListener("click", (e) => {
-//   e.preventDefault();
-//   let toAbout = document.getElementById("about-me");
-//   toAbout.scrollIntoView({ behavior: "smooth" });
-// });
-
-// Skills.addEventListener("click", (e) => {
-//   e.preventDefault();
-//   let toSkills = document.getElementById("skills");
-//   toSkills.scrollIntoView({ behavior: "smooth" });
-// });
-
-// Articles.addEventListener("click", (e) => {
-//   e.preventDefault();
-//   menu.removeEventListener;
-//   window.screenY(0);
-//   let toArticles = document.getElementById("articles");
-//   toArticles.scrollIntoView({ behavior: "smooth" });
-// });
-
-// Dash.addEventListener("click", (e) => {
-//   e.preventDefault();
-//   let toDash = document.getElementById("dashboard");
-//   toDash.scrollIntoView({ behavior: "smooth" });
-// });
-
 document.addEventListener("DOMContentLoaded", (e) => {
   e.preventDefault();
   let Home = document.getElementById("scrollHome");
@@ -93,9 +54,9 @@ document.addEventListener("DOMContentLoaded", (e) => {
     e.preventDefault();
     setTimeout(() => {
       toHome.scrollIntoView({ behavior: "smooth" });
-    }, 100);
+    }, 0);
     toSkills.style.display = "none";
-    mainHome.style.display = "contents";
+    mainHome.style.display = "block";
     toAbout.style.display = "none";
     toArticles.style.display = "none";
     mainDash.style.display = "none";
@@ -107,7 +68,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
     e.preventDefault();
     setTimeout(() => {
       toAbout.scrollIntoView({ behavior: "smooth" });
-    }, 100);
+    }, 0);
     toSkills.style.display = "none";
     toAbout.style.display = "none";
     toArticles.style.display = "none";
@@ -119,10 +80,10 @@ document.addEventListener("DOMContentLoaded", (e) => {
   });
 
   Skills.addEventListener("click", (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     setTimeout(() => {
       toSkills.scrollIntoView({ behavior: "smooth" });
-    }, 100);
+    }, 0);
     toSkills.style.display = "flex";
     toAbout.style.display = "none";
     toArticles.style.display = "none";
@@ -137,10 +98,10 @@ document.addEventListener("DOMContentLoaded", (e) => {
     e.preventDefault();
     setTimeout(() => {
       toArticles.scrollIntoView({ behavior: "smooth" });
-    }, 100);
+    }, 0);
     toSkills.style.display = "none";
     toAbout.style.display = "none";
-    toArticles.style.display = "contents";
+    toArticles.style.display = "block";
     mainHome.style.display = "none";
     aboutDetail.style.display = "none";
     toAbout.style.display = "none";
@@ -152,7 +113,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
     e.preventDefault();
     setTimeout(() => {
       toDash.scrollIntoView({ behavior: "smooth" });
-    }, 100);
+    }, 0);
     toSkills.style.display = "none";
     toAbout.style.display = "none";
     toArticles.style.display = "none";
