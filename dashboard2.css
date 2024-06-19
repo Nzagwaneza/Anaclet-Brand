@@ -9,9 +9,14 @@
 .dash-reply-btn,
 .dash-change-role-btn,
 .dash-moddy-btn,
+.dash-skills-edit-btn,
 .dash-delete-message,
 .dash-delete-skills,
 .dash-delete-user,
+#save-edit,
+#cancel-edit,
+#save-skills-edit,
+#cancel-edition,
 .dash-add-skills-btn {
   margin-bottom: 10px;
   padding: 5px 10px;
@@ -22,13 +27,19 @@
   color: #fff;
 }
 
+.my-label {
+  font-size: x-small;
+}
+
 .dash-add-skills-btn {
   margin: 4%;
 }
 
 .dash-delete-message,
+#cancel-edition,
 .dash-delete-user,
-.dash-delete-skills {
+.dash-delete-skills,
+#cancel-edit {
   background-color: hsl(0, 70%, 59%);
 }
 
@@ -191,6 +202,22 @@ div#dash-top-input {
   display: flex;
   gap: 15px;
   flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 1vw;
+}
+
+/* Tablets Styles and min-desktop */
+@media only screen and (min-width: 601px) and (max-width: 1170px) {
+  .message-to-edit {
+    width: 100%;
+  }
+
+  .dash-for-every-single-blog {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 0;
+  }
 }
 
 /* Mobile Styles */
@@ -209,11 +236,22 @@ div#dash-top-input {
   .modification-option {
     margin: 0 auto;
   }
-}
 
-/* Tablets Styles and min-desktop */
-@media only screen and (min-width: 601px) and (max-width: 1170px) {
-  .message-to-edit {
-    width: 100%;
+  /* .every-single-blog {
+    display: flex;
+    flex-direction: column;
+  } */
+
+  .dash-for-every-single-blog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 6px;
+    padding: 6px;
+    border: #dfe6ee solid;
+    border-radius: 12px;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-between;
   }
 }

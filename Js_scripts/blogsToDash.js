@@ -14,20 +14,20 @@ document.addEventListener("DOMContentLoaded", () => {
       const blogElement = document.createElement("div");
       blogElement.className = "dash-for-every-single-blog";
       blogElement.innerHTML = `
-              <div class="dash-title-blog">
-                  <span class="title-blog-to-edit">
-                      ${article.title}
-                  </span>
-              </div>
-              <div class="modification-option">
-                  <button class="dash-moddy-btn" class="dash-edit-blog">
-                      Edit
-                  </button>
-                  <button onclick="deleteBlog(${key})" class="dash-delete-message">
-                      Delete
-                  </button>
-              </div>
-        `;
+        <div class="dash-title-blog">
+          <span class="title-blog-to-edit">
+            ${article.title}
+          </span>
+        </div>
+        <div class="modification-option">
+          <button class="dash-moddy-btn dash-edit-blog" data-key="${key}">
+            Edit
+          </button>
+          <button onclick="deleteBlog(${key})" class="dash-delete-message">
+            Delete
+          </button>
+        </div>
+      `;
       blogContainer.appendChild(blogElement);
     });
   }

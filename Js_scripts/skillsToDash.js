@@ -26,14 +26,14 @@ function renderSkills() {
     const skillElement = document.createElement("div");
     skillElement.className = "dash-skill-item";
     skillElement.innerHTML = `
-    <strong> ${skills.skills} <br /></strong>
-    <div class="My_icons">
-      <img class="skills-image" src="${skills.image}" alt="Image for skills" />
-    </div>
-    <div class="modification-option">
-        <button class="dash-moddy-btn">Edit</button>
+      <strong> ${skills.skills} <br /></strong>
+      <div class="My_icons">
+        <img class="skills-image" src="${skills.image}" alt="Image for skills" />
+      </div>
+      <div class="modification-option">
+        <button class="dash-skills-edit-btn" onclick="editSkills('${key}')" data-key="${key}">Edit</button>
         <button class="dash-delete-skills" onclick="deleteSkills('${key}')">Delete</button>
-    </div>
+      </div>
     `;
     dashSkillsContainer.appendChild(skillElement);
 
