@@ -51,14 +51,43 @@ function renderMessages() {
       </div>
       <div class="modification-option-for-message">
         <button class="dash-reply-btn" onclick="replyToEmail('${message.email}')">Reply</button>
-        <button class="dash-delete-message" onclick="deleteMessage('${key}')">Delete</button>
+        <button class="dash-delete-message"  data-key="${key}">Delete</button>
       </div>
     </div>
     `;
     messagesContainer.appendChild(messageElement);
   });
-  window.renderMessages = renderMessages;
+
+  document.querySelectorAll(".dash-delete-message").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      const key = e.target.getAttribute("data-key");
+      showDeletePopup(key);
+    });
+  });
 }
+
+function showDeletePopup(key) {
+  const popup = document.getElementById("popup");
+  const yesBtn = document.getElementById("confirmAlert");
+  const noBtn = document.getElementById("StopDefault");
+
+  popup.classList.add("activated");
+
+  const confirmDelete = () => {
+    deleteMessage(key);
+    popup.classList.remove("activated");
+    yesBtn.removeEventListener("click", confirmDelete);
+  };
+
+  const cancelDelete = () => {
+    popup.classList.remove("activated");
+    noBtn.removeEventListener("click", cancelDelete);
+  };
+
+  yesBtn.addEventListener("click", confirmDelete);
+  noBtn.addEventListener("click", cancelDelete);
+}
+window.renderMessages = renderMessages;
 
 function deleteMessage(key) {
   if (!AllMessages.hasOwnProperty(key)) {

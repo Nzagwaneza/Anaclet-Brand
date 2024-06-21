@@ -32,10 +32,40 @@ function renderSkills() {
       </div>
       <div class="modification-option">
         <button class="dash-skills-edit-btn" onclick="editSkills('${key}')" data-key="${key}">Edit</button>
-        <button class="dash-delete-skills" onclick="deleteSkills('${key}')">Delete</button>
+        <button class="dash-delete-skills" data-key="${key}">Delete</button>
       </div>
     `;
     dashSkillsContainer.appendChild(skillElement);
+
+    window.renderSkillsToSkillSection = renderSkillsToSkillSection;
+    document.querySelectorAll(".dash-delete-skills").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        const key = e.target.getAttribute("data-key");
+        showDeletePopup(key);
+      });
+    });
+
+    function showDeletePopup(key) {
+      const popup = document.getElementById("popup");
+      const yesBtn = document.getElementById("confirmAlert");
+      const noBtn = document.getElementById("StopDefault");
+
+      popup.classList.add("activated");
+
+      const confirmDelete = () => {
+        deleteSkills(key);
+        popup.classList.remove("activated");
+        yesBtn.removeEventListener("click", confirmDelete);
+      };
+
+      const cancelDelete = () => {
+        popup.classList.remove("activated");
+        noBtn.removeEventListener("click", cancelDelete);
+      };
+
+      yesBtn.addEventListener("click", confirmDelete);
+      noBtn.addEventListener("click", cancelDelete);
+    }
 
     // this append the list of all skills to the skills displaying area
     // found on lower side of dashboard
@@ -44,4 +74,15 @@ function renderSkills() {
   });
   // Attach the function to the window object to make it globally accessible
   window.renderSkills = renderSkills;
+}
+
+function deleteSkills(key) {
+  const AllSkills = JSON.parse(localStorage.getItem("AllSkills")) || {};
+  if (!AllSkills.hasOwnProperty(key)) {
+    return;
+  }
+  delete AllSkills[key];
+  updateSkillsLocalStorage(AllSkills);
+  renderSkills();
+  renderSkillsToSkillSection();
 }

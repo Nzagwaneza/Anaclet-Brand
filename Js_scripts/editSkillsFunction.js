@@ -45,14 +45,14 @@ window.editSkills = function (key) {
         AllSkills[key] = skills;
         localStorage.setItem("AllSkills", JSON.stringify(AllSkills));
         document.getElementById("edit-form").remove();
-        console.log("Skills updated with new image", AllSkills);
+        console.log("Skills updated with new image");
       };
       readerForSkillsImg.readAsDataURL(updatedSkillsImage);
     } else {
       AllSkills[key] = skills;
       localStorage.setItem("AllSkills", JSON.stringify(AllSkills));
       document.getElementById("edit-form").remove();
-      console.log("Skills updated without new image", AllSkills);
+      console.log("Skills updated without new image");
     }
   });
 

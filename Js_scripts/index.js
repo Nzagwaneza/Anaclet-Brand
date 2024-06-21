@@ -59,7 +59,9 @@ function displayAllBlogs(event) {
           `;
 }
 displayAllBlogs();
+
 allBlogs.addEventListener("click", function (event) {
+  // updateBlogsLocalStorage();
   event.preventDefault();
   displayAllBlogs(event);
 });
@@ -245,12 +247,12 @@ addingBlog();
 //TODO: #adding EventListener to the buttons or links from Dashboard
 
 allBlogs.addEventListener("click", () => {
-  displayAllBlogs();
+  // displayAllBlogs();
   renderBlogsToDash();
 });
 
 modifyBlogs.addEventListener("click", () => {
-  displayAllBlogs();
+  // displayAllBlogs();
   renderBlogsToDash();
 });
 

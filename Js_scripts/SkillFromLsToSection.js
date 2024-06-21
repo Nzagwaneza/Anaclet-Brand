@@ -29,18 +29,6 @@ function renderSkillsToSkillSection() {
   window.renderSkillsToSkillSection = renderSkillsToSkillSection;
 }
 
-function deleteSkills(key) {
-  const AllSkills = JSON.parse(localStorage.getItem("AllSkills")) || {};
-  if (!AllSkills.hasOwnProperty(key)) {
-    console.error(`Skills with key ${key} does not exist.`);
-    return;
-  }
-  delete AllSkills[key];
-  updateSkillsLocalStorage(AllSkills);
-  renderSkills();
-  renderSkillsToSkillSection();
-}
-
 function updateSkillsLocalStorage(allSkills) {
   localStorage.setItem("AllSkills", JSON.stringify(allSkills));
 }

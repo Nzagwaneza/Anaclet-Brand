@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="Dashboard.css" />
     <link rel="stylesheet" href="dashboard2.css" />
     <link rel="stylesheet" href="Subscribe.css" />
+    <link rel="stylesheet" href="popup.css" />
 
     <link
       rel="stylesheet"
@@ -467,11 +468,20 @@
       <h1 class="dashboard-title">DASHBOARD</h1>
     </div>
     <div class="dash-container">
+      <div class="dash-popup" id="popup">
+        <div class="pop-box">
+          <span>Please confirm: Proceed with deletion?</span>
+          <div>
+            <button id="StopDefault">Return</button>
+            <button id="confirmAlert">Yes</button>
+          </div>
+        </div>
+      </div>
       <div class="dash-container-left">
         <div id="dash-about-artice">
           <span><strong>Manage Article</strong></span>
           <button class="dash-add-art"><i class="fas fa-plus"></i>Article</button>
-          <button id="dash-art-editing" class="dash-modify-art"  onclick="displayAllBlogs()"><i class="fas fa-edit"></i>Article</button>
+          <button id="dash-art-editing" class="dash-modify-art" ><i class="fas fa-edit"></i>Article</button>
         </div>
         <div > 
           <a class="menu" id="dash-all-blogs"  href=""><i class="fas fa-chart-bar"></i> <strong>List of blogs</strong></a>

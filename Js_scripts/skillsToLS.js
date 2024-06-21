@@ -1,6 +1,4 @@
 function addSkills() {
-  console.log("addSkills function called");
-
   let submitSkillsBtn = document.querySelector(".dash-add-skills-btn");
   let AllSkills = JSON.parse(localStorage.getItem("AllSkills")) || {};
 
@@ -50,7 +48,9 @@ function addSkills() {
 
   if (submitSkillsBtn) {
     // submitSkillsBtn.removeEventListener("click", addSkills); // Remove any existing listener to prevent multiple attachments
-    submitSkillsBtn.addEventListener("click", addSkills);
+    submitSkillsBtn.addEventListener("click", addSkills, renderBlogsToDash);
+    updateSkillsLocalStorage();
+    submitSkillsBtn.addEventListener("click", renderBlogsToDash); //FIXME:this code does not work.
   } else {
     console.error("Button with class 'dash-add-skills-btn' not found");
   }

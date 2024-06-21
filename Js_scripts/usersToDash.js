@@ -41,12 +41,50 @@ function renderUsers() {
         </div>
         <div class="modification-option">
             <button class="dash-change-role-btn" onclick="changeRole('${key}')">Change</button>
-            <button class="dash-delete-user" onclick="deleteUser('${key}')">Delete</button>
+            <button class="dash-delete-user" data-key="${key}">Delete</button>
         </div> 
     `;
     usersContainer.appendChild(userElement);
   });
   window.renderUsers = renderUsers;
+  document.querySelectorAll(".dash-delete-user").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      const key = e.target.getAttribute("data-key");
+      showDeletePopup(key);
+    });
+  });
+}
+
+function showDeletePopup(key) {
+  const popup = document.getElementById("popup");
+  popup.innerHTML = `
+      <div class="pop-box">
+          <span>Please confirm: Proceed with deletion?</span>
+          <div>
+            <button id="StopDefault">Return</button>
+            <button id="confirmAlert">Yes</button>
+          </div>
+        </div>
+  `;
+  const yesBtn = document.getElementById("confirmAlert");
+  const noBtn = document.getElementById("StopDefault");
+
+  popup.classList.add("activated");
+
+  const confirmDelete = () => {
+    deleteUser(key);
+    popup.classList.remove("activated");
+    // FIXME: i have to add to check who is going to change user's role.
+    yesBtn.removeEventListener("click", confirmDelete);
+  };
+
+  const cancelDelete = () => {
+    popup.classList.remove("activated");
+    noBtn.removeEventListener("click", cancelDelete);
+  };
+
+  yesBtn.addEventListener("click", confirmDelete);
+  noBtn.addEventListener("click", cancelDelete);
 }
 
 function deleteUser(key) {
@@ -66,16 +104,42 @@ function updateUserLocalStorage() {
 
 function changeRole(key) {
   const user = AllUsers[key];
+  const popup = document.getElementById("popup");
+  popup.innerHTML = `
+    <div class="pop-box">
+      <span>Who are you?</span>
+      <input id="Username"  name="Username" type="text"placeholder="Enter your Username"/>
+      <div>
+        <button id="StopDefault">Return</button>
+        <button id="confirmAlert">Change</button>
+      </div>
+    </div>
+  `;
+  const yesBtn = document.getElementById("confirmAlert");
+  const noBtn = document.getElementById("StopDefault");
 
-  if (user.role === "user") {
-    user.role = "admin";
-    renderUsers();
-    const YourPassword = prompt("Enter the admin password to change the role:");
-  } else {
-    const enteredPassword = prompt(
-      "Enter the admin password to change the role:"
-    );
-    user.role = "user";
-    renderUsers();
-  }
+  popup.classList.add("activated");
+
+  const confirmChange = () => {
+    popup.classList.remove("activated");
+    if (user.role === "user") {
+      user.role = "admin";
+      updateUserLocalStorage();
+      renderUsers();
+    } else {
+      user.role = "user";
+      updateUserLocalStorage();
+      renderUsers();
+    }
+    yesBtn.removeEventListener("click", confirmChange);
+  };
+
+  const cancelChange = (e) => {
+    e.preventDefault();
+    popup.classList.remove("activated");
+    noBtn.removeEventListener("click", cancelChange);
+  };
+
+  yesBtn.addEventListener("click", confirmChange);
+  noBtn.addEventListener("click", cancelChange);
 }

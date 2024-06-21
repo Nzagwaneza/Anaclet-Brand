@@ -35,7 +35,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  border-bottom: solid rgb(220, 208, 208);
+  border: solid rgb(220, 208, 208);
   background-color: #f5f5f5;
   border-radius: 13px;
   padding: 4px;
@@ -91,7 +91,7 @@ span#listOfArticles {
 .art-viewingBtn {
   width: 70px;
   background-color: #6c9efe;
-  border-radius: 20px;
+  border-radius: 6px;
 }
 
 /* Mobile Styles */

@@ -13,6 +13,7 @@
 .dash-delete-message,
 .dash-delete-skills,
 .dash-delete-user,
+.dash-delete-blog,
 #save-edit,
 #cancel-edit,
 #save-skills-edit,
@@ -35,6 +36,7 @@
   margin: 4%;
 }
 
+.dash-delete-blog,
 .dash-delete-message,
 #cancel-edition,
 .dash-delete-user,
@@ -175,12 +177,16 @@ div#dash-top-input {
 
 .count {
   width: 130px;
-  background-color: hsl(0, 0%, 91%);
+  background-color: #33699f;
   border-radius: 10%;
   display: block;
   text-align: center;
   padding: 14px;
   border: 2px solid;
+}
+
+.count-title {
+  color: white;
 }
 
 .number-of-count {
@@ -193,7 +199,7 @@ div#dash-top-input {
   display: grid;
   border-radius: 50%;
   background-color: #d9d9d9;
-  color: red;
+  color: black;
   align-items: center;
   justify-content: center;
 }
