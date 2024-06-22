@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("user created successfully!");
     setTimeout(() => {
       signMessage.style.color = "";
-      window.location.href = "login.html";
+      window.location.href = "Login.html";
     }, 2000);
   });
 });
