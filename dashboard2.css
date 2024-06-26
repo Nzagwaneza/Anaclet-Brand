@@ -3,7 +3,6 @@
 .dash-container {
   display: flex;
   justify-content: space-between;
-  padding: 20px;
 }
 
 .dash-reply-btn,
@@ -231,7 +230,6 @@ div#dash-top-input {
   .dash-container {
     display: flex;
     justify-content: space-between;
-    padding: 20px;
     font-size: small;
   }
 
