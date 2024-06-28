@@ -7,11 +7,17 @@ allBlogs.addEventListener("click", function (event) {
     blogContainer.innerHTML = "";
 
     const sorted = Object.keys(AllArticles).sort((a, b) => b - a);
-    sorted.forEach((key) => {
-      const article = AllArticles[key];
-      const blogElement = document.createElement("div");
-      blogElement.className = "dash-for-every-single-blog";
-      blogElement.innerHTML = `
+    if (sorted.length === 0) {
+      const noBlogElement = document.createElement("div");
+      noBlogElement.className = "dash-empty-display";
+      noBlogElement.innerText = "No articles have been published yet!";
+      blogContainer.appendChild(noBlogElement);
+    } else {
+      sorted.forEach((key) => {
+        const article = AllArticles[key];
+        const blogElement = document.createElement("div");
+        blogElement.className = "dash-for-every-single-blog";
+        blogElement.innerHTML = `
           <div class="dash-title-blog">
             <span class="title-blog-to-edit">
               ${article.title}
@@ -26,8 +32,9 @@ allBlogs.addEventListener("click", function (event) {
             </button>
           </div>
         `;
-      blogContainer.appendChild(blogElement);
-    });
+        blogContainer.appendChild(blogElement);
+      });
+    }
 
     // Add event listeners to the delete buttons after they are rendered
     document.querySelectorAll(".dash-delete-blog").forEach((btn) => {

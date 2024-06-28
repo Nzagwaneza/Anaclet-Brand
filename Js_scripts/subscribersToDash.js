@@ -36,13 +36,19 @@ function renderSubscribers(e) {
 
   subscribersContainer.appendChild(subscriberListingTitle);
 
-  reversedKeys.forEach((key) => {
-    const subscriber = AllSubscribers[key];
-    if (subscriber) {
-      // Ensure subscriber is defined
-      const subscriberElement = document.createElement("div");
-      subscriberElement.className = "dash-for-every-user";
-      subscriberElement.innerHTML = `
+  if (reversedKeys.length === 0) {
+    const noSubscriberElement = document.createElement("div");
+    noSubscriberElement.className = "dash-empty-display";
+    noSubscriberElement.innerText = "No subscriptions have been made yet!";
+    subscribersContainer.appendChild(noSubscriberElement);
+  } else {
+    reversedKeys.forEach((key) => {
+      const subscriber = AllSubscribers[key];
+      if (subscriber) {
+        // Ensure subscriber is defined
+        const subscriberElement = document.createElement("div");
+        subscriberElement.className = "dash-for-every-user";
+        subscriberElement.innerHTML = `
         <div class="user-to-change">
           <div>
             <strong>Email: </strong><user>${subscriber.email}</user>
@@ -52,11 +58,12 @@ function renderSubscribers(e) {
           <button class="dash-delete-user" data-key="${key}">Delete</button>
         </div>
       `;
-      subscribersContainer.appendChild(subscriberElement);
-    } else {
-      console.error(`Subscriber with key ${key} is undefined.`);
-    }
-  });
+        subscribersContainer.appendChild(subscriberElement);
+      } else {
+        console.error(`Subscriber with key ${key} is undefined.`);
+      }
+    });
+  }
 
   document.querySelectorAll(".dash-delete-user").forEach((btn) => {
     btn.addEventListener("click", (e) => {

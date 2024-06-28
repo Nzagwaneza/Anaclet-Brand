@@ -29,12 +29,17 @@ function renderMessages() {
   `;
 
   messagesContainer.appendChild(messageListingTitle);
-
-  sortedKeys.forEach((key) => {
-    const message = AllMessages[key];
-    const messageElement = document.createElement("div");
-    messageElement.className = "dash-for-every-message";
-    messageElement.innerHTML = `
+  if (sortedKeys.length === 0) {
+    const noMessageElement = document.createElement("div");
+    noMessageElement.className = "dash-empty-display";
+    noMessageElement.innerText = "No messages have been delivered to you yet!";
+    messagesContainer.appendChild(noMessageElement);
+  } else {
+    sortedKeys.forEach((key) => {
+      const message = AllMessages[key];
+      const messageElement = document.createElement("div");
+      messageElement.className = "dash-for-every-message";
+      messageElement.innerHTML = `
       <div class="message-to-edit">
         <p id="sender-names">
           <strong>Names: </strong><sender>${message.name}</sender>
@@ -55,18 +60,19 @@ function renderMessages() {
       </div>
     </div>
     `;
-    messagesContainer.appendChild(messageElement);
-  });
+      messagesContainer.appendChild(messageElement);
+    });
+  }
 
   document.querySelectorAll(".dash-delete-message").forEach((btn) => {
     btn.addEventListener("click", (e) => {
       const key = e.target.getAttribute("data-key");
-      showDeletePopup(key);
+      showDeletePopupForMessage(key);
     });
   });
 }
 
-function showDeletePopup(key) {
+function showDeletePopupForMessage(key) {
   const popup = document.getElementById("popup");
   const yesBtn = document.getElementById("confirmAlert");
   const noBtn = document.getElementById("StopDefault");
