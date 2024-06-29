@@ -48,7 +48,7 @@ img.view-topic-pic {
   border-radius: 11px;
 }
 
-#art-view-section {
+.art-view-section {
   display: none; /* hiding the article contents by default */
 }
 
@@ -76,7 +76,7 @@ img.view-topic-pic {
   padding: 2vh;
 }
 
-#view-contact-form {
+.view-contact-form {
   display: flex;
   width: 280px;
   height: 60%;
@@ -84,7 +84,7 @@ img.view-topic-pic {
   border-radius: 0 0 14px 14px;
 }
 
-textarea#message {
+textarea.message {
   border: none;
   height: auto;
   min-height: 3em;
@@ -96,7 +96,7 @@ textarea#message {
   padding: 9px;
 }
 
-#view-submitBtn {
+.view-submitBtn {
   width: 32%;
   border-radius: 11px;
   color: white;

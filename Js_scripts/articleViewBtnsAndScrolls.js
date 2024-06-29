@@ -1,17 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
-  let articleDetailView = document.querySelectorAll(".art-viewingBtn");
+  let articleDetailViews = document.querySelectorAll(".art-viewingBtn");
   let articleViewGround = document.getElementById("art-view-section");
 
-  articleDetailView.forEach((key) => {
-    key.addEventListener("click", (e) => {
-      e.preventDefault();
-      articleViewGround.style.display = "block";
-      //adding scroll effect to the article view page.
-      articleViewGround.scrollIntoView({ behavior: "smooth" });
-      setTimeout(() => {
-        document.scrollBy({ top: -70, behavior: "smooth" });
-      }, 400); // TODO: i can adjust the timeout accordingly #for Insane behaviors.
+  if (!articleViewGround) {
+    console.error("Element with id 'art-view-section' not found.");
+    return;
+  }
 
+  articleDetailViews.forEach((articleDetailView, index) => {
+    articleDetailView.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      // Ensure articleViewGround is displayed
+      articleViewGround.style.display = "block";
+      console.log(
+        `Article view section display style: ${articleViewGround.style.display}`
+      );
+
+      // Adding scroll effect to the article view page.
+      articleViewGround.scrollIntoView({ behavior: "smooth" });
       console.log("button is pressed to read the article");
 
       let BlogsTitleView = document.querySelector("#blog-title-view");
@@ -19,13 +26,48 @@ document.addEventListener("DOMContentLoaded", () => {
       let topicPicView = document.getElementsByClassName("view-topic-pic")[0];
       let paragraphs = document.getElementsByClassName("view-combined-par")[0];
       let AllArticles = JSON.parse(localStorage.getItem("Articles")) || {};
+      const sortingKeys = Object.keys(AllArticles).sort((a, b) => b - a);
 
-      for (let key in AllArticles) {
+      if (sortingKeys.length === 0) {
+        console.error("No articles available.");
+        return;
+      }
+
+      let key = sortingKeys[index]; // Assuming the index corresponds to the sorted article key
+      if (!AllArticles.hasOwnProperty(key)) {
+        console.error(`Article with key ${key} does not exist.`);
+        return;
+      } else {
         let article = AllArticles[key];
         BlogsTitleView.innerHTML = article.title;
         authorNameView.innerHTML = article.author;
         topicPicView.src = article.images[1];
         paragraphs.innerText = article.text;
+        let articleFooter = document.createElement("div");
+        articleFooter.className = "view-art-bottom";
+        articleFooter.innerHTML = `
+          <a href="#" id="share" onclick="shareOnSocialMedia()">Share <i class="fa-solid fa-square-share-nodes"></i></a>
+          <a href="#" id="like" onclick="incrementLike()">Like <i class="fa-solid fa-thumbs-up"> 0</i></a>
+          <form class="view-contact-form">
+            <a href="#" class="comment">Leave your Comment...</a>
+            <div class="form-Message">
+              <textarea
+                class="message"
+                name="message"
+                cols="30"
+                rows="3"
+                placeholder="Write your message here">
+              </textarea>
+            </div>
+            <button type="submit" class="view-submitBtn">Send</button>
+          </form>
+        `;
+
+        let existingFooter = document.querySelector(".view-art-bottom");
+        if (existingFooter) {
+          existingFooter.remove();
+        }
+        articleViewGround.insertAdjacentElement("beforeend", articleFooter);
       }
     });
   });
